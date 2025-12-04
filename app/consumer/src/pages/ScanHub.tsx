@@ -422,26 +422,12 @@ function ScanHub() {
       }
 
       // Generate spectral scan steps from result
-      const steps = generateScanSteps(selectedMethod, result);
-      
-      // Set steps to "scanning" status initially
-      const scanningSteps = steps.map(step => ({ ...step, status: 'scanning' as const }));
-      if (process.env.NODE_ENV !== 'production') {
-        console.log('🔬 Setting spectral steps:', scanningSteps.length, 'steps');
-        console.log('🔬 isScanning:', true);
-      }
-      setSpectralSteps(scanningSteps);
-      setShowSpectralScan(true);
+      // Skip spectral scan animation (disabled due to rendering issues)
+      // Just show progress stages instead
       setScanStage('checks');
+      await new Promise(resolve => setTimeout(resolve, 800));
       
-      // Wait for spectral scan animation to complete
-      await new Promise(resolve => setTimeout(resolve, steps.length * 400 + 500));
-      
-      // Update steps with final status
-      setSpectralSteps(steps);
       setScanStage('verdict');
-      
-      // Brief verdict display
       await new Promise(resolve => setTimeout(resolve, 300));
 
       // Use breakdown from result if available (demo mode), otherwise calculate default

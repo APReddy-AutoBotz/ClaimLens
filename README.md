@@ -21,6 +21,15 @@
 1. Visit [https://claimlens.netlify.app](https://claimlens.netlify.app)
 2. Click "Try Demo" for a quick sample, or paste text below and scan
 
+**🎯 What judges should look for:**
+- Scan the AVOID sample → see Trust Score breakdown → tap "Why this score?"
+- Go to Settings → toggle allergens → scan again → see personalized warnings
+- Check History → see saved scans with search/filter
+- Tap "Share Results" → see shareable proof card generation
+- Notice the Kiroween "Haunted Lens" theme with glassmorphism effects
+
+> **Note:** Live demo is Consumer PWA only. Admin UI requires local setup.
+
 ### Option B: Local Development
 
 | Step | Action | What to Notice |
@@ -97,7 +106,6 @@ Mobile-first PWA (installable) for scanning food products.
 - Scan history with search/filter (localStorage)
 - Safer swaps suggestions with personalization
 - Shareable proof cards & results
-- Spectral scan animation during analysis
 - PWA with offline support (installable on mobile/desktop)
 - WCAG AA accessible with reduced motion support
 

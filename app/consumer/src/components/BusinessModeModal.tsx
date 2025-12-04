@@ -6,13 +6,23 @@ interface BusinessModeModalProps {
   onClose: () => void;
 }
 
+// Check if we're on Netlify production
+const isProduction = typeof window !== 'undefined' && 
+  window.location.hostname.includes('netlify.app');
+
 export function BusinessModeModal({ isOpen, onClose }: BusinessModeModalProps) {
   const [adminRunning, setAdminRunning] = useState(false);
   const [checking, setChecking] = useState(true);
 
   useEffect(() => {
     if (isOpen) {
-      // Check if admin app is running on port 3000
+      // In production, admin is not available - skip the check
+      if (isProduction) {
+        setAdminRunning(false);
+        setChecking(false);
+        return;
+      }
+      // Check if admin app is running on port 3000 (local dev only)
       fetch('http://localhost:3000')
         .then(() => setAdminRunning(true))
         .catch(() => setAdminRunning(false))
@@ -77,7 +87,9 @@ export function BusinessModeModal({ isOpen, onClose }: BusinessModeModalProps) {
         ) : (
           <>
             <p className={styles.description}>
-              The Business/Admin app runs separately and provides B2B features.
+              {isProduction 
+                ? 'The Admin app is available for local development only.'
+                : 'The Business/Admin app runs separately and provides B2B features.'}
             </p>
 
             <div className={styles.features}>
@@ -99,14 +111,25 @@ export function BusinessModeModal({ isOpen, onClose }: BusinessModeModalProps) {
               </div>
             </div>
 
-            <div className={styles.instructions}>
-              <h3 className={styles.instructionsTitle}>To start the Admin app:</h3>
-              <ol className={styles.steps}>
-                <li>Open a new terminal</li>
-                <li>Run: <code>cd app/admin && npm run dev</code></li>
-                <li>Visit: <a href="http://localhost:3000" target="_blank" rel="noopener noreferrer">http://localhost:3000</a></li>
-              </ol>
-            </div>
+            {!isProduction && (
+              <div className={styles.instructions}>
+                <h3 className={styles.instructionsTitle}>To start the Admin app:</h3>
+                <ol className={styles.steps}>
+                  <li>Open a new terminal</li>
+                  <li>Run: <code>cd app/admin && pnpm dev</code></li>
+                  <li>Visit: http://localhost:3000</li>
+                </ol>
+              </div>
+            )}
+
+            {isProduction && (
+              <div className={styles.instructions}>
+                <p>Clone the repo and run locally to access Admin features:</p>
+                <code style={{ display: 'block', marginTop: '8px', fontSize: '12px' }}>
+                  github.com/APReddy-AutoBotz/ClaimLens
+                </code>
+              </div>
+            )}
 
             <button 
               className={styles.secondaryButton}
