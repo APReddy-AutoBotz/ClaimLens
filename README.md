@@ -1,150 +1,137 @@
-# ClaimLens — Starter Repo (Kiroween Edition)
+# ClaimLens — Kiroween Edition 🎃
 
-**ClaimLens** is the public brand. SKUs:
-- **ClaimLens MenuShield** (B2B pre‑publish gate for cloud kitchens/marketplaces)
-- **ClaimLens Go** (B2C browser/mobile overlay)
+**ClaimLens** is a food label claim verification system with proof-first design.
+
+## SKUs
+- **ClaimLens MenuShield** (B2B pre-publish gate for cloud kitchens/marketplaces)
+- **ClaimLens Go** (B2C consumer mobile app)
 - **ClaimLens Packs** (Allergens, Banned Claims, Disclaimers, per locale)
 
-This repo contains the core **policy engine** (internally you may still refer to it as the label/claim firewall).
+---
 
-## Quick Start (VS Code + PowerShell/bash)
+## 🚀 Quick Start (< 5 minutes)
 
-1) Install Node.js 20 LTS and **pnpm** (`npm i -g pnpm`).
-2) Unzip and open the folder in **VS Code**.
-3) Install deps: `pnpm install`
+### Prerequisites
+- Node.js 20 LTS
+- pnpm (`npm i -g pnpm`)
 
-### Run local utilities
+### 1. Install Dependencies
 ```sh
-pnpm test                # unit tests (Vitest)
-pnpm test:fixtures       # scan fixtures
-pnpm test:perf           # real performance measurement
-pnpm test:e2e            # Playwright E2E tests
-pnpm check:budgets       # latency budget enforcement
-pnpm check:docs-for-new-transforms
-pnpm mcp:dev             # start MCP mock servers
-pnpm audit:generate      # generate audit pack from fixtures
+pnpm install
 ```
 
-### B2C Consumer Mode (ClaimLens Go)
-
-**Setup:**
+### 2. Start All Services
 ```sh
+# Terminal 1: API + MCP Mock Servers
+pnpm mcp:dev             # Starts on ports 7001-7004, 8080
+
+# Terminal 2: Admin UI
+cd app/admin
+pnpm dev                 # http://localhost:3000
+
+# Terminal 3: Consumer App (ClaimLens Go)
 cd app/consumer
-pnpm install
 pnpm dev                 # http://localhost:3002
 ```
 
-**Build for production:**
-```sh
-cd app/consumer
-pnpm build
-pnpm preview             # preview production build
-```
+### Ports Summary
+| Service | Port | URL |
+|---------|------|-----|
+| Admin UI | 3000 | http://localhost:3000 |
+| Consumer App | 3002 | http://localhost:3002 |
+| API Server | 8080 | http://localhost:8080 |
+| MCP OCR | 7001 | - |
+| MCP Units | 7002 | - |
+| MCP Recalls | 7003 | - |
+| MCP Alternatives | 7004 | - |
 
-**Run tests:**
-```sh
-cd app/consumer
-pnpm test                # unit tests
-pnpm test:e2e            # E2E tests (requires dev server running)
-```
+---
+
+## 📱 Consumer App (ClaimLens Go)
+
+The B2C mobile-first PWA for scanning food products.
 
 **Features:**
 - 4 input methods: URL, Screenshot, Barcode, Text
-- Trust score calculation (0-110)
-- Verdict classification (Allow/Caution/Avoid)
-- Allergen profile management
-- Scan history (localStorage)
+- Trust score (0-110) with verdict (Allow/Caution/Avoid)
+- Allergen profile & alerts
+- Scan history
 - Safer swaps suggestions
 - PWA with offline support
-- Mobile-first responsive design
-- WCAG AA accessibility
+- WCAG AA accessible
 
-See [app/consumer/README.md](app/consumer/README.md) for detailed documentation.
+**Demo Examples to Scan:**
+```
+# AVOID verdict (strong warnings)
+SuperDetox Miracle Weight Loss Tea
+Burns fat instantly! Melts belly fat overnight!
+Clinically proven to lose 20 lbs in 7 days
 
-### CI/CD Validation Gates
+# CAUTION verdict (moderate issues)
+Organic Immunity Booster Almond Milk
+Boosts immune system naturally
+Prevents cold and flu
+
+# ALLOW verdict (clean product)
+Simply Organic Almond Milk
+Ingredients: Filtered water, organic almonds, sea salt
+USDA Organic certified
+```
+
+---
+
+## 🖥️ Admin UI (MenuShield)
+
+The B2B dashboard for compliance teams.
+
+**Features:**
+- Real-time compliance dashboard
+- Audit viewer with receipts
+- Rule packs editor
+- Action queue management
+- Policy change tracking
+
+---
+
+## 🧪 Testing
+
 ```sh
-pnpm validate:schemas           # validate policies and rule packs
-pnpm verify:signatures          # verify SHA-256 signatures
-pnpm verify:signatures:generate # generate new signatures
-pnpm check:coverage             # ensure ≥80% test coverage
-pnpm ci:gates                   # run all CI gates
+pnpm test                # Unit tests (Vitest)
+pnpm test:e2e            # E2E tests (Playwright)
+pnpm test:fixtures       # Scan fixtures
 ```
 
-### Git Hooks (Local Validation)
+---
 
-**PowerShell (Windows):**
-```powershell
-.\.kiro\hooks\pre-commit.ps1    # schema, signatures, tests, fixtures
-.\.kiro\hooks\pre-push.ps1      # performance, budgets, e2e
-```
+## 📁 Project Structure
 
-**Bash (Linux/macOS/Git Bash):**
-```sh
-./.kiro/hooks/pre-commit.sh     # schema, signatures, tests, fixtures
-./.kiro/hooks/pre-push.sh       # performance, budgets, e2e
-```
-
-**Cross-platform (Node.js):**
-```sh
-pnpm hooks:precommit     # runs schema validation, tests, fixtures
-pnpm hooks:prverify      # runs perf, budgets, e2e
-pnpm hooks:release       # validates all gates for release
-```
-
-**Installing Git Hooks:**
-```sh
-# Linux/macOS/Git Bash
-ln -s ../../.kiro/hooks/pre-commit.sh .git/hooks/pre-commit
-ln -s ../../.kiro/hooks/pre-push.sh .git/hooks/pre-push
-chmod +x .git/hooks/pre-commit .git/hooks/pre-push
-
-# Windows PowerShell (requires Git 2.9+)
-# Edit .git/config and add:
-# [core]
-#     hooksPath = .kiro/hooks
-```
-
-### Connect to **Kiro**
-- The `/.kiro` directory is included—**do not** gitignore it.
-- Open the project in Kiro to see **Specs, Steering, Hooks, MCP**.
-
-## Structure
 ```
 /app
-  /api        # proxy core (add your server here)
-  /web        # admin console UI
-  /consumer   # B2C consumer mode PWA (ClaimLens Go)
-  /ext        # browser overlay (ClaimLens Go)
+  /admin      # Admin console UI (port 3000)
+  /consumer   # B2C consumer PWA (port 3002)
+  /api        # API server + routes
 /packages
-  /transforms # transform libraries + tests
-    rewrite.disclaimer  # Appends FSSAI disclaimers for banned claims
-    redact.pii          # Redacts emails, phone numbers, pincodes
-    detect.weasel_words # Detects vague marketing language
-    calculate.trust_score # Calculates consumer trust score
-  /core       # core utilities (trust scoring, safer swaps)
-/packs        # rule packs (allergens, claims, disclaimers)
-/fixtures     # menu JSON & site HTML fixtures for CI hooks
-/servers      # MCP mock services (OCR, unit conversion, recalls, alternatives)
-/.kiro
-  /specs      # Specs (policy DSL)
-  /steering   # Tone, a11y, logging rules
-  /hooks      # Governance scripts (CI)
-  /mcp        # Extensibility stubs
-/docs         # PRD/NFR/etc (to be generated by Kiro)
+  /transforms # Transform libraries (disclaimer, PII, weasel words, trust score)
+  /core       # Core utilities (trust scoring, safer swaps)
+/packs        # Rule packs (allergens, claims, disclaimers)
+/servers      # MCP mock services
+/fixtures     # Test fixtures
 /e2e          # Playwright E2E tests
+/.kiro        # Kiro specs, steering, hooks
 ```
 
-## Transforms
+---
 
-**rewrite.disclaimer** - Detects banned marketing claims (superfood, detox, miracle, etc.) and appends locale-appropriate disclaimers. Supports en-IN (FSSAI), en-US (FDA), en-GB (FSA).
+## 🎃 Kiroween Theme
 
-**redact.pii** - Removes personally identifiable information including email addresses, Indian phone numbers (+91 format), and contextual pincodes from content and logs.
+The Consumer app features the "Haunted Lens" theme:
+- Spectral Teal (`#14B8A6`) - Primary actions
+- Ember Orange (`#F59E0B`) - Warnings
+- Glassmorphism effects
+- Spooky-but-classy microcopy
 
-## Demo order (3 minutes)
-1) Raw menu in → flags (**ClaimLens MenuShield**).
-2) One‑click clean → audit pack.
-3) Vibe coding moment: generate/modify a transform + tests.
-4) Augment‑Lite policy edit with critique gate.
-5) Degraded Mode toggle for a non‑critical MCP.
-6) ClaimLens Go overlay on a site fixture (badges + “why”).
+---
 
+## License
+
+MIT
