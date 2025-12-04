@@ -4,8 +4,8 @@ import {
   generateSuggestions,
   trackSuggestionClick,
   type SaferSwapSuggestion,
-} from '../../../../packages/core/safer-swaps';
-import { getVerdict } from '../../../../packages/core/trust-score';
+} from '../lib/safer-swaps';
+import { getVerdict } from '../lib/trust-score';
 import { useAllergenProfile } from '../hooks/useAllergenProfile';
 import { VerdictBadge } from './VerdictBadge';
 import styles from './SaferSwaps.module.css';

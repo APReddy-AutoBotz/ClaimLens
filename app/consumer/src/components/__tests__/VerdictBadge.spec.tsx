@@ -5,7 +5,7 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import { VerdictBadge } from '../VerdictBadge';
-import type { Verdict } from '../../../../../packages/core/trust-score';
+import type { Verdict } from '../../lib/trust-score';
 
 describe('VerdictBadge', () => {
   it('should render allow verdict with correct styling', () => {

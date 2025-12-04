@@ -5,7 +5,7 @@ import BarcodeScanner from '../components/BarcodeScanner';
 import ExtractedTextEditor from '../components/ExtractedTextEditor';
 import ScanProgress, { ScanStage } from '../components/ScanProgress';
 import { SpectralScan, type ScanStep } from '../components/SpectralScan';
-import { calculateTrustScore } from '../../../../packages/core/trust-score';
+import { calculateTrustScore } from '../lib/trust-score';
 import { generateScanSteps } from '../lib/scanSteps';
 import { useAllergenProfile } from '../hooks/useAllergenProfile';
 import { useOnlineStatus } from '../hooks/useOnlineStatus';
@@ -318,8 +318,8 @@ function ScanHub() {
       
       if (isInDemoMode()) {
         console.log('[Demo Mode] Using local analysis - no backend available');
-        // Perform local analysis using transforms
-        const { detectWeaselWords } = await import('../../../../packages/transforms/detect.weasel_words');
+        // Perform local analysis using local transforms
+        const { detectWeaselWords } = await import('../lib/detect-weasel-words');
         const weaselResult = detectWeaselWords(inputData);
         
         // Check for banned claims patterns
@@ -339,7 +339,7 @@ function ScanHub() {
         }
         
         // Calculate trust score locally
-        const { calculateTrustScore: calcScore } = await import('../../../../packages/core/trust-score');
+        const { calculateTrustScore: calcScore } = await import('../lib/trust-score');
         const scoreResult = calcScore({
           bannedClaimsCount: bannedClaims.length,
           hasRecall: false,

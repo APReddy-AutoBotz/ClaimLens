@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useScanHistory } from '../hooks/useScanHistory';
 import { VerdictBadge } from '../components/VerdictBadge';
-import { getVerdict } from '../../../../packages/core/trust-score';
+import { getVerdict } from '../lib/trust-score';
 import styles from './History.module.css';
 
 type VerdictFilter = 'all' | 'allow' | 'caution' | 'avoid';

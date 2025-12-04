@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams, useNavigate, Link } from 'react-router-dom';
-import { getVerdict } from '../../../../packages/core/trust-score';
+import { getVerdict } from '../lib/trust-score';
 import { IssuesList, type Issue } from '../components/IssuesList';
 import { WhyDrawer } from '../components/WhyDrawer';
 import { SaferSwaps } from '../components/SaferSwaps';

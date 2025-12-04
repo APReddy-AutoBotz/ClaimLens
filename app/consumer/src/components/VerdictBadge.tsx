@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { type Verdict } from '../../../../packages/core/trust-score';
+import { type Verdict } from '../lib/trust-score';
 import styles from './VerdictBadge.module.css';
 
 interface VerdictBadgeProps {

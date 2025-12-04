@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { type TrustScoreBreakdown } from '../../../../packages/core/trust-score';
+import { type TrustScoreBreakdown } from '../lib/trust-score';
 import styles from './WhyDrawer.module.css';
 
 interface WhyDrawerProps {

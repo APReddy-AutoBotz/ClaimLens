@@ -1,5 +1,5 @@
 import { memo, useState, useEffect, useRef } from 'react';
-import { type TrustScoreBreakdown } from '../../../../packages/core/trust-score';
+import { type TrustScoreBreakdown } from '../lib/trust-score';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 import styles from './TrustScoreDisplay.module.css';
 
