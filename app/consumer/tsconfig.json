@@ -32,7 +32,16 @@
       "@types/*": ["./src/types/*"]
     }
   },
-  "include": ["src"],
-  "exclude": ["src/__tests__", "**/*.spec.ts", "**/*.spec.tsx"],
+  "include": ["src", "vite-env.d.ts"],
+  "exclude": [
+    "src/__tests__",
+    "**/*.spec.ts",
+    "**/*.spec.tsx",
+    "../../packages/**",
+    "../../servers/**",
+    "../../app/admin/**",
+    "../../app/api/**",
+    "node_modules"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
