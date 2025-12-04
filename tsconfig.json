@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "Bundler",
+    "outDir": "dist",
+    "rootDir": ".",
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@claimlens/core": ["packages/core/index.ts"],
+      "@claimlens/transforms": ["packages/transforms/index.ts"],
+      "@claimlens/api": ["app/api/index.ts"],
+      "@claimlens/web": ["app/web/index.ts"]
+    }
+  },
+  "include": [
+    "packages/**/*.ts",
+    "app/**/*.ts"
+  ],
+  "exclude": [
+    "app/consumer/**/*"
+  ]
+}

@@ -1,0 +1,54 @@
+version: '3.8'
+
+services:
+  ocr-label:
+    build:
+      context: .
+      dockerfile: Dockerfile.mcp
+    command: node servers/ocr-label.mjs
+    ports:
+      - "7001:7001"
+    environment:
+      - NODE_ENV=development
+    networks:
+      - claimlens-mcp
+
+  unit-convert:
+    build:
+      context: .
+      dockerfile: Dockerfile.mcp
+    command: node servers/unit-convert.mjs
+    ports:
+      - "7002:7002"
+    environment:
+      - NODE_ENV=development
+    networks:
+      - claimlens-mcp
+
+  recall-lookup:
+    build:
+      context: .
+      dockerfile: Dockerfile.mcp
+    command: node servers/recall-lookup.mjs
+    ports:
+      - "7003:7003"
+    environment:
+      - NODE_ENV=development
+    networks:
+      - claimlens-mcp
+
+  alt-suggester:
+    build:
+      context: .
+      dockerfile: Dockerfile.mcp
+    command: node servers/alt-suggester.mjs
+    ports:
+      - "7004:7004"
+    environment:
+      - NODE_ENV=development
+    networks:
+      - claimlens-mcp
+
+networks:
+  claimlens-mcp:
+    driver: bridge

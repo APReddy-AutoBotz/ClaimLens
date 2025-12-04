@@ -1,0 +1,41 @@
+# Degraded Mode Policy Matrix
+# Defines fallback behavior when MCP services are unavailable
+# Requirements: 23.1-23.8
+
+services:
+  ocr.label:
+    critical: false
+    action: pass_through
+    fallback_behavior: "Skip OCR processing, use text-only analysis"
+    banner_text: "Image analysis unavailable. Text-based validation active."
+    audit_note: "Processed without OCR: ocr.label service unavailable, applied text-only analysis"
+    timeout_ms: 500
+    max_retries: 5
+    
+  unit.convert:
+    critical: false
+    action: pass_through
+    fallback_behavior: "Use default per-100g assumptions for nutrition normalization"
+    banner_text: "Unit conversion unavailable. Using standard per-100g format."
+    audit_note: "Processed without unit conversion: unit.convert service unavailable, applied per-100g defaults"
+    timeout_ms: 500
+    max_retries: 5
+    
+  recall.lookup:
+    critical: false
+    action: modify
+    fallback_behavior: "Add generic food safety disclaimer instead of specific recall information"
+    banner_text: "Recall database unavailable. Generic safety disclaimers applied."
+    audit_note: "Processed without recall lookup: recall.lookup service unavailable, applied generic safety disclaimer"
+    timeout_ms: 500
+    max_retries: 5
+    fallback_disclaimer: "Please verify ingredient safety with current food safety databases."
+    
+  alt.suggester:
+    critical: false
+    action: pass_through
+    fallback_behavior: "Flag banned claims without suggesting compliant alternatives"
+    banner_text: "Alternative suggestions unavailable. Flags shown without recommendations."
+    audit_note: "Processed without alternatives: alt.suggester service unavailable, flagged without suggestions"
+    timeout_ms: 500
+    max_retries: 5

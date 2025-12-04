@@ -1,0 +1,3583 @@
+﻿
+> @claimlens/consumer@0.1.0 test
+> vitest run --run --reporter=verbose
+
+
+[7m[1m[36m RUN [39m[22m[27m [36mv1.6.1[39m [90mE:/claimlens-starter/app/consumer[39m
+
+ [32mΓ£ô[39m src/utils/__tests__/accessibility.spec.ts[2m > [22mAccessibility Utils[2m > [22mgetContrastRatio[2m > [22mshould calculate contrast ratio between two colors
+ [32mΓ£ô[39m src/utils/__tests__/accessibility.spec.ts[2m > [22mAccessibility Utils[2m > [22mgetContrastRatio[2m > [22mshould calculate contrast for design system colors
+ [32mΓ£ô[39m src/utils/__tests__/accessibility.spec.ts[2m > [22mAccessibility Utils[2m > [22mmeetsWCAGAA[2m > [22mshould return true for sufficient contrast
+ [32mΓ£ô[39m src/utils/__tests__/accessibility.spec.ts[2m > [22mAccessibility Utils[2m > [22mmeetsWCAGAA[2m > [22mshould return false for insufficient contrast
+ [32mΓ£ô[39m src/utils/__tests__/open-food-facts.spec.ts[2m > [22mOpen Food Facts Integration[2m > [22mshould return null for product not found
+ [32mΓ£ô[39m src/utils/__tests__/accessibility-focus.property.spec.ts[2m > [22mProperty 6: Accessibility Focus Visibility[2m > [22mfocus ring colors meet WCAG AA contrast requirements against all backgrounds
+ [32mΓ£ô[39m src/utils/__tests__/accessibility-focus.property.spec.ts[2m > [22mProperty 6: Accessibility Focus Visibility[2m > [22mcontrast ratio calculation is valid for any hex color pair
+ [32mΓ£ô[39m src/utils/__tests__/accessibility-focus.property.spec.ts[2m > [22mProperty 6: Accessibility Focus Visibility[2m > [22mfocus indicator width is sufficient for visibility
+ [32mΓ£ô[39m src/utils/__tests__/accessibility-focus.property.spec.ts[2m > [22mProperty 6: Accessibility Focus Visibility[2m > [22mcontrast ratio is symmetric
+ [32mΓ£ô[39m src/utils/__tests__/accessibility-focus.property.spec.ts[2m > [22mProperty 6: Accessibility Focus Visibility[2m > [22midentical colors have contrast ratio of 1
+ [32mΓ£ô[39m src/components/__tests__/ModeSwitch.spec.tsx[2m > [22mModeSwitch[2m > [22mshould render consumer and business tabs
+ [32mΓ£ô[39m src/components/__tests__/ProofStrip.spec.tsx[2m > [22mProofStrip[2m > [22mshould render all check types
+ [32mΓ£ô[39m src/components/__tests__/ProofStrip.spec.tsx[2m > [22mProofStrip[2m > [22mshould render all output types
+ [31m├ù[39m src/components/__tests__/ProofStrip.spec.tsx[2m > [22mProofStrip[2m > [22mshould have proper structure with checks and outputs sections
+[31m   ΓåÆ [2mexpect([22m[31melement[31m[2m).toHaveClass([22m[32m[32m"proofStrip"[32m[31m[2m)[22m
+
+Expected the element to have class:
+[32m  proofStrip[31m
+Received:
+[31m  _container_7bec23[31m[39m
+ [31m├ù[39m src/components/__tests__/ProofStrip.spec.tsx[2m > [22mProofStrip[2m > [22mshould render with glassmorphism styling
+[31m   ΓåÆ [2mexpect([22m[31mreceived[31m[2m).toBeInTheDocument()[22m
+
+[31mreceived[31m value must be an HTMLElement or an SVGElement.
+[39m
+ [32mΓ£ô[39m src/components/__tests__/ProofStrip.spec.tsx[2m > [22mProofStrip[2m > [22mshould display checks section label
+ [32mΓ£ô[39m src/components/__tests__/ProofStrip.spec.tsx[2m > [22mProofStrip[2m > [22mshould display outputs section label
+ [32mΓ£ô[39m src/utils/__tests__/open-food-facts.spec.ts[2m > [22mOpen Food Facts Integration[2m > [22mshould return product data for valid barcode[33m 614[2mms[22m[39m
+ [32mΓ£ô[39m src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22mReceiptsDrawer[2m > [22mshould render trigger button
+ [32mΓ£ô[39m src/components/__tests__/VerdictBadge.spec.tsx[2m > [22mVerdictBadge[2m > [22mshould render allow verdict with correct styling
+ [32mΓ£ô[39m src/components/__tests__/VerdictBadge.spec.tsx[2m > [22mVerdictBadge[2m > [22mshould render caution verdict with correct styling
+ [32mΓ£ô[39m src/components/__tests__/VerdictBadge.spec.tsx[2m > [22mVerdictBadge[2m > [22mshould render avoid verdict with correct styling
+ [32mΓ£ô[39m src/components/__tests__/VerdictBadge.spec.tsx[2m > [22mVerdictBadge[2m > [22mshould capitalize verdict label
+ [32mΓ£ô[39m src/components/__tests__/VerdictBadge.spec.tsx[2m > [22mVerdictBadge[2m > [22mshould have icon marked as aria-hidden
+ [32mΓ£ô[39m src/components/__tests__/ModeSwitch.spec.tsx[2m > [22mModeSwitch[2m > [22mshould call onModeChange when switching modes
+ [32mΓ£ô[39m src/components/__tests__/ModeSwitch.spec.tsx[2m > [22mModeSwitch[2m > [22mshould show active state for current mode
+ [32mΓ£ô[39m src/components/__tests__/ModeSwitch.spec.tsx[2m > [22mModeSwitch[2m > [22mshould show inactive state for non-current mode
+ [32mΓ£ô[39m src/components/__tests__/ModeSwitch.spec.tsx[2m > [22mModeSwitch[2m > [22mshould have proper ARIA role
+ [32mΓ£ô[39m src/components/__tests__/ModeSwitch.spec.tsx[2m > [22mModeSwitch[2m > [22mshould be keyboard accessible
+node.exe : [90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m 
+> [22m[2mshould expand on click[22m[39m
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Users\mailt\AppData\Roaming\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([90mstderr[2m...click[22m[39m:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+ [31m├ù[39m src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22mReceiptsDrawer[2m > [22mshould expand on click
+[31m   ΓåÆ Found multiple elements with the text: /12/
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<code[31m
+  [33mclass[31m=[32m"_metaValue_4e60c4"[31m
+[36m>[31m
+  [0mtest-123[0m
+[36m</code>[31m
+
+Ignored nodes: comments, script, style
+[36m<span[31m
+  [33mclass[31m=[32m"_metaValue_4e60c4"[31m
+[36m>[31m
+  [0m12[0m
+[36m</span>[31m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"_container_4e60c4"[31m
+    [36m>[31m
+      [36m<button[31m
+        [33maria-controls[31m=[32m"receipts-content"[31m
+        [33maria-expanded[31m=[32m"true"[31m
+        [33mclass[31m=[32m"_trigger_4e60c4"[31m
+      [36m>[31m
+        [36m<span[31m
+          [33mclass[31m=[32m"_triggerIcon_4e60c4"[31m
+        [36m>[31m
+          [0m≡ƒôï[0m
+        [36m</span>[31m
+        [36m<span[31m
+          [33mclass[31m=[32m"_triggerText_4e60c4"[31m
+        [36m>[31m
+          [0mReceipts[0m
+        [36m</span>[31m
+        [36m<span[31m
+          [33mclass[31m=[32m"_triggerSubtext_4e60c4"[31m
+        [36m>[31m
+          [0mNo tricks. Just proof.[0m
+        [36m</span>[31m
+        [36m<span[31m
+          [33maria-hidden[31m=[32m"true"[31m
+          [33mclass[31m=[32m"_triggerArrow_4e60c4"[31m
+        [36m>[31m
+          [0mΓû╝[0m
+        [36m</span>[31m
+      [36m</button>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"_content_4e60c4"[31m
+        [33mid[31m=[32m"receipts-content"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"_header_4e60c4"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"_title_4e60c4"[31m
+          [36m>[31m
+            [0mWhy this verdict?[0m
+          [36m</h3>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"_subtitle_4e60c4"[31m
+          [36m>[31m
+            [0mTransparent evidence for every decision[0m
+          [36m</p>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"_meta_4e60c4"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"_metaItem_4e60c4"[31m
+          [36m>[31m
+            [36m<span[31m
+              [33mclass[31m=[32m"_metaLabel_4e60c4"[31m
+            [36m>[31m
+              [0mRequest ID:[0m
+            [36m</span>[31m
+            [36m<code[31m
+              [33mclass[31m=[32m"_metaValue_4e60c4"[31m
+            [36m>[31m
+              [0mtest-123[0m
+            [36m</code>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"_metaItem_4e60c4"[31m
+          [36m>[31m
+            [36m<span[31m
+              [33mclass[31m=[32m"_metaLabel_4e60c4"[31m
+            [36m>[31m
+              [0mChecks run:[0m
+            [36m</span>[31m
+            [36m<span[31m
+              [33mclass[31m=[32m"_metaValue_4e60c4"[31m
+            [36m>[31m
+              [0m12[0m
+            [36m</span>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"_empty_4e60c4"[31m
+        [36m>[31m
+          [36m<p>[31m
+            [0mNo policy violations detected[0m
+          [36m</p>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"_emptySubtext_4e60c4"[31m
+          [36m>[31m
+            [0mAll checks passed successfully[0m
+          [36m</p>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould show empty state when no receipts[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+ [32mΓ£ô[39m src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22mReceiptsDrawer[2m > [22mshould show empty state when no receipts
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould render receipts when provided[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+ [32mΓ£ô[39m src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22mReceiptsDrawer[2m > [22mshould render receipts when provided
+ [32mΓ£ô[39m src/utils/__tests__/open-food-facts.spec.ts[2m > [22mOpen Food Facts Integration[2m > [22mshould cache product data[33m 599[2mms[22m[39m
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould collapse when clicking trigger again[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+ [32mΓ£ô[39m src/pages/__tests__/Results.spec.tsx[2m > [22mResults Page[2m > [22mshould render empty state when no results
+ [32mΓ£ô[39m src/pages/__tests__/Results.spec.tsx[2m > [22mResults Page[2m > [22mshould render results when data is in sessionStorage
+ [32mΓ£ô[39m src/pages/__tests__/Results.spec.tsx[2m > [22mResults Page[2m > [22mshould render issues list when issues present
+ [32mΓ£ô[39m src/pages/__tests__/Results.spec.tsx[2m > [22mResults Page[2m > [22mshould clamp trust score to 100 maximum
+ [32mΓ£ô[39m src/pages/__tests__/Results.spec.tsx[2m > [22mResults Page[2m > [22mshould clamp trust score to 0 minimum
+ [32mΓ£ô[39m src/pages/__tests__/Results.spec.tsx[2m > [22mResults Page[2m > [22mshould render receipts drawer
+ [32mΓ£ô[39m src/pages/__tests__/Results.spec.tsx[2m > [22mResults Page[2m > [22mshould show improved verdict copy for clean products
+[90mstderr[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould render 
+empty state when no results[22m[39m
+ΓÜá∩╕Å React Router Future Flag Warning: React Router will begin wrapping state updates in 
+`React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more 
+information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+ΓÜá∩╕Å React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You 
+can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see 
+https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+[90mstdout[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould render results when data is in sessionStorage[22m[39m
+Scan Result: {
+  trust_score: [33m85[39m,
+  verdict: {
+    label: [32m'allow'[39m,
+    color: [32m'#10B981'[39m,
+    icon: [32m'Γ£ô'[39m,
+    explanation: [32m'This product meets safety standards with minimal concerns.'[39m
+  },
+  badges: [],
+  reasons: [],
+  breakdown: {
+    baseScore: [33m90[39m,
+    bannedClaimsDeduction: [33m0[39m,
+    recallDeduction: [33m0[39m,
+    allergenDeduction: [33m0[39m,
+    weaselWordDeduction: [33m0[39m,
+    cleanBonus: [33m10[39m,
+    finalScore: [33m85[39m
+  }
+}
+Product Info: [90mundefined[39m
+Scan Result: {
+  trust_score: [33m85[39m,
+  verdict: {
+    label: [32m'allow'[39m,
+    color: [32m'#10B981'[39m,
+    icon: [32m'Γ£ô'[39m,
+    explanation: [32m'This product meets safety standards with minimal concerns.'[39m
+  },
+  badges: [],
+  reasons: [],
+  breakdown: {
+    baseScore: [33m90[39m,
+    bannedClaimsDeduction: [33m0[39m,
+    recallDeduction: [33m0[39m,
+    allergenDeduction: [33m0[39m,
+    weaselWordDeduction: [33m0[39m,
+    cleanBonus: [33m10[39m,
+    finalScore: [33m85[39m
+  }
+}
+Product Info: [90mundefined[39m
+
+[90mstdout[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould render issues list when issues present[22m[39m
+Scan Result: {
+  trust_score: [33m60[39m,
+  verdict: {
+    label: [32m'caution'[39m,
+    color: [32m'#F59E0B'[39m,
+    icon: [32m'ΓÜá'[39m,
+    explanation: [32m'This product has some concerns.'[39m
+  },
+  badges: [
+    {
+      kind: [32m'warn'[39m,
+      label: [32m'Allergen Warning'[39m,
+      explanation: [32m'Contains peanuts'[39m
+    }
+  ],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+Scan Result: {
+  trust_score: [33m60[39m,
+  verdict: {
+    label: [32m'caution'[39m,
+    color: [32m'#F59E0B'[39m,
+    icon: [32m'ΓÜá'[39m,
+    explanation: [32m'This product has some concerns.'[39m
+  },
+  badges: [
+    {
+      kind: [32m'warn'[39m,
+      label: [32m'Allergen Warning'[39m,
+      explanation: [32m'Contains peanuts'[39m
+    }
+  ],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+
+[90mstdout[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould clamp trust score to 100 maximum[22m[39m
+Scan Result: {
+  trust_score: [33m150[39m,
+  verdict: {
+    label: [32m'allow'[39m,
+    color: [32m'#10B981'[39m,
+    icon: [32m'Γ£ô'[39m,
+    explanation: [32m'This product meets safety standards.'[39m
+  },
+  badges: [],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+Scan Result: {
+  trust_score: [33m150[39m,
+  verdict: {
+    label: [32m'allow'[39m,
+    color: [32m'#10B981'[39m,
+    icon: [32m'Γ£ô'[39m,
+    explanation: [32m'This product meets safety standards.'[39m
+  },
+  badges: [],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+
+[90mstdout[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould clamp trust score to 0 minimum[22m[39m
+Scan Result: {
+  trust_score: [33m-20[39m,
+  verdict: {
+    label: [32m'avoid'[39m,
+    color: [32m'#EF4444'[39m,
+    icon: [32m'Γ£ò'[39m,
+    explanation: [32m'This product has significant concerns.'[39m
+  },
+  badges: [],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+Scan Result: {
+  trust_score: [33m-20[39m,
+  verdict: {
+    label: [32m'avoid'[39m,
+    color: [32m'#EF4444'[39m,
+    icon: [32m'Γ£ò'[39m,
+    explanation: [32m'This product has significant concerns.'[39m
+  },
+  badges: [],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+
+[90mstdout[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould render receipts drawer[22m[39m
+Scan Result: {
+  trust_score: [33m75[39m,
+  verdict: {
+    label: [32m'caution'[39m,
+    color: [32m'#F59E0B'[39m,
+    icon: [32m'ΓÜá'[39m,
+    explanation: [32m'This product has some concerns.'[39m
+  },
+  badges: [],
+  reasons: [],
+  correlation_id: [32m'test-123'[39m
+}
+Product Info: [90mundefined[39m
+Scan Result: {
+  trust_score: [33m75[39m,
+  verdict: {
+    label: [32m'caution'[39m,
+    color: [32m'#F59E0B'[39m,
+    icon: [32m'ΓÜá'[39m,
+    explanation: [32m'This product has some concerns.'[39m
+  },
+  badges: [],
+  reasons: [],
+  correlation_id: [32m'test-123'[39m
+}
+Product Info: [90mundefined[39m
+
+[90mstdout[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould show improved verdict copy for clean products[22m[39m
+Scan Result: {
+  trust_score: [33m100[39m,
+  verdict: {
+    label: [32m'allow'[39m,
+    color: [32m'#10B981'[39m,
+    icon: [32m'Γ£ô'[39m,
+    explanation: [32m'This product meets safety standards.'[39m
+  },
+  badges: [],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+Scan Result: {
+  trust_score: [33m100[39m,
+  verdict: {
+    label: [32m'allow'[39m,
+    color: [32m'#10B981'[39m,
+    icon: [32m'Γ£ô'[39m,
+    explanation: [32m'This product meets safety standards.'[39m
+  },
+  badges: [],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould collapse when clicking trigger again[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+ [32mΓ£ô[39m src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22mReceiptsDrawer[2m > [22mshould collapse when clicking trigger again
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould close on ESC key[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+ [31m├ù[39m src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22mReceiptsDrawer[2m > [22mshould close on ESC key
+[31m   ΓåÆ [2mexpect([22m[31melement[31m[2m).not.toBeInTheDocument()[22m
+
+[31mexpected document not to contain element, found <h3
+  class="_title_4e60c4"
+>
+  Why this verdict?
+</h3> instead[31m[39m
+ [32mΓ£ô[39m src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22mReceiptsDrawer[2m > [22mshould have proper ARIA attributes
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould update ARIA expanded when opened[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+ [32mΓ£ô[39m src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22mReceiptsDrawer[2m > [22mshould update ARIA expanded when opened
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould display correlation ID when provided[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+ [32mΓ£ô[39m src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22mReceiptsDrawer[2m > [22mshould display correlation ID when provided
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould display checks run count when provided[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+ [32mΓ£ô[39m src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22mReceiptsDrawer[2m > [22mshould display checks run count when provided
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould render receipt details when available[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+ [32mΓ£ô[39m src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22mReceiptsDrawer[2m > [22mshould render receipt details when available
+ [32mΓ£ô[39m src/utils/__tests__/open-food-facts.spec.ts[2m > [22mOpen Food Facts Integration[2m > [22mshould handle API errors gracefully[33m 599[2mms[22m[39m
+ [32mΓ£ô[39m src/utils/__tests__/open-food-facts.spec.ts[2m > [22mOpen Food Facts Integration[2m > [22mshould handle rate limiting[33m 599[2mms[22m[39m
+[90mstderr[2m | src/components/__tests__/IssuesList.property.spec.tsx[2m > [22m[2mIssuesList - 
+Property-Based Tests[2m > [22m[2mProperty 4: Issue Grouping Completeness - all issues are categorized into 
+exactly one group[22m[39m
+ΓÜá∩╕Å React Router Future Flag Warning: React Router will begin wrapping state updates in 
+`React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more 
+information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+ΓÜá∩╕Å React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You 
+can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see 
+https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+ [32mΓ£ô[39m src/components/__tests__/IssuesList.property.spec.tsx[2m > [22mIssuesList - Property-Based Tests[2m > [22mProperty 4: Issue Grouping Completeness - all issues are categorized into exactly one group[33m 700[2mms[22m[39m
+ [32mΓ£ô[39m src/components/__tests__/IssuesList.property.spec.tsx[2m > [22mIssuesList - Property-Based Tests[2m > [22mProperty: Issues with explicit categories are grouped correctly[33m 432[2mms[22m[39m
+ [32mΓ£ô[39m src/components/__tests__/IssuesList.property.spec.tsx[2m > [22mIssuesList - Property-Based Tests[2m > [22mProperty: No issues are lost during grouping process[33m 769[2mms[22m[39m
+ [32mΓ£ô[39m src/components/__tests__/IssuesList.property.spec.tsx[2m > [22mIssuesList - Property-Based Tests[2m > [22mProperty: Empty issues array displays empty state
+ [32mΓ£ô[39m src/components/__tests__/VerdictBanner.property.spec.tsx[2m > [22mProperty 2: Verdict Consistency[2m > [22mverdict is deterministically derived from trust score: >= 70 ΓåÆ allow, 40-69 ΓåÆ modify, < 40 ΓåÆ avoid[33m 1784[2mms[22m[39m
+ [32mΓ£ô[39m src/components/__tests__/VerdictBanner.property.spec.tsx[2m > [22mProperty 2: Verdict Consistency[2m > [22mscore of 70 maps to allow verdict
+ [32mΓ£ô[39m src/components/__tests__/VerdictBanner.property.spec.tsx[2m > [22mProperty 2: Verdict Consistency[2m > [22mscore of 69 maps to modify verdict
+ [32mΓ£ô[39m src/components/__tests__/VerdictBanner.property.spec.tsx[2m > [22mProperty 2: Verdict Consistency[2m > [22mscore of 40 maps to modify verdict
+ [32mΓ£ô[39m src/components/__tests__/VerdictBanner.property.spec.tsx[2m > [22mProperty 2: Verdict Consistency[2m > [22mscore of 39 maps to avoid verdict
+ [32mΓ£ô[39m src/components/__tests__/VerdictBanner.property.spec.tsx[2m > [22mProperty 3: Verdict Microcopy Mapping[2m > [22mverdict microcopy matches specification for all verdict labels[33m 1833[2mms[22m[39m
+ [32mΓ£ô[39m src/components/__tests__/VerdictBanner.property.spec.tsx[2m > [22mProperty 3: Verdict Microcopy Mapping[2m > [22mallow verdict displays correct Kiroween microcopy
+ [32mΓ£ô[39m src/components/__tests__/VerdictBanner.property.spec.tsx[2m > [22mProperty 3: Verdict Microcopy Mapping[2m > [22mmodify verdict displays correct Kiroween microcopy
+ [32mΓ£ô[39m src/components/__tests__/VerdictBanner.property.spec.tsx[2m > [22mProperty 3: Verdict Microcopy Mapping[2m > [22mavoid verdict displays correct Kiroween microcopy
+ [32mΓ£ô[39m src/components/__tests__/VerdictBanner.property.spec.tsx[2m > [22mProperty 3: Verdict Microcopy Mapping[2m > [22meach verdict has unique microcopy
+ [32mΓ£ô[39m src/components/__tests__/EvidenceDrawer.property.spec.tsx[2m > [22mProperty 5: Evidence Drawer Content[2m > [22mexpanded drawer contains all three required sections (rules, matched text, policy refs)[33m 6346[2mms[22m[39m
+ [32mΓ£ô[39m src/components/__tests__/EvidenceDrawer.property.spec.tsx[2m > [22mProperty 5: Evidence Drawer Content[2m > [22mrules section displays correct count badge[33m 3532[2mms[22m[39m
+ [32mΓ£ô[39m src/components/__tests__/EvidenceDrawer.property.spec.tsx[2m > [22mProperty 5: Evidence Drawer Content[2m > [22mmatched text section displays correct count badge[33m 3109[2mms[22m[39m
+ [32mΓ£ô[39m src/components/__tests__/EvidenceDrawer.property.spec.tsx[2m > [22mProperty 5: Evidence Drawer Content[2m > [22mpolicy refs section displays correct count badge[33m 2847[2mms[22m[39m
+ [31m├ù[39m src/components/__tests__/EvidenceDrawer.property.spec.tsx[2m > [22mProperty 5: Evidence Drawer Content[2m > [22mexpanded sections display their content[33m 81445[2mms[22m[39m
+[31m   ΓåÆ Property failed after 1 tests
+{ seed: -1193867684, path: "0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0", endOnFailure: true }
+Counterexample: [{"rules":[{"id":"!","name":"!","description":"!","severity":"info"}],"matchedText":[{"text":"!        !","highlight":[0,1],"rule":"!","sourceUrl":undefined}],"policyRefs":[{"packName":"!","packVersion":"0.0.0","ruleId":"!","description":"!"}]}]
+Shrunk 74 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run[39m
+ [32mΓ£ô[39m src/components/__tests__/EvidenceDrawer.property.spec.tsx[2m > [22mProperty 5: Evidence Drawer Content[2m > [22msummary count is displayed on collapsed trigger[33m 1234[2mms[22m[39m
+
+[31mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[1m[7m Failed Tests 5 [27m[22mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/__tests__/EvidenceDrawer.property.spec.tsx[2m > [22mProperty 
+5: Evidence Drawer Content[2m > [22mexpanded sections display their content
+[31m[1mError[22m: Property failed after 1 tests
+{ seed: -1193867684, path: "0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0
+:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0:0", endOnFailure: true }
+Counterexample: [{"rules":[{"id":"!","name":"!","description":"!","severity":"info"}],"matchedText":[{"text":"!  
+      !","highlight":[0,1],"rule":"!","sourceUrl":undefined}],"policyRefs":[{"packName":"!","packVersion":"0.0.0"
+,"ruleId":"!","description":"!"}]}]
+Shrunk 74 time(s)
+
+Hint: Enable verbose mode in order to have the list of all failing values encountered during the run[39m
+[90m [2mΓ¥»[22m buildError 
+node_modules/fast-check/lib/check/runner/utils/RunDetailsFormatter.js:[2m156:19[22m[39m
+[90m [2mΓ¥»[22m throwIfFailed 
+node_modules/fast-check/lib/check/runner/utils/RunDetailsFormatter.js:[2m165:11[22m[39m
+[90m [2mΓ¥»[22m reportRunDetails 
+node_modules/fast-check/lib/check/runner/utils/RunDetailsFormatter.js:[2m178:16[22m[39m
+[90m [2mΓ¥»[22m Proxy.assert node_modules/fast-check/lib/check/runner/Runner.js:[2m61:9[22m[39m
+[36m [2mΓ¥»[22m src/components/__tests__/EvidenceDrawer.property.spec.tsx:[2m249:8[22m[39m
+    [90m247| [39m   */[39m
+    [90m248| [39m  [34mit[39m([32m'expanded sections display their content'[39m[33m,[39m () [33m=>[39m 
+{
+    [90m249| [39m    fc[33m.[39m[34massert[39m(
+    [90m   | [39m       [31m^[39m
+    [90m250| [39m      fc[33m.[39m[34mproperty[39m(
+    [90m251| [39m        fc[33m.[39m[34mrecord[39m({
+
+[31m[1mCaused by: TestingLibraryElementError[22m[39m: Found multiple elements with the role "button" and 
+name `/receipts/i`
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"true"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 _arrowOpen_bdae77"[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+Ignored nodes: comments, script, style
+[36m<button[39m
+  [33maria-controls[39m=[32m"evidence-content"[39m
+  [33maria-expanded[39m=[32m"false"[39m
+  [33mclass[39m=[32m"_trigger_bdae77"[39m
+[36m>[39m
+  [36m<span[39m
+    [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+  [36m>[39m
+    [0m≡ƒôï[0m
+  [36m</span>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerText_bdae77"[39m
+    [36m>[39m
+      [0mReceipts[0m
+    [36m</span>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+    [36m>[39m
+      [0mNo tricks. Just proof.[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<div[39m
+    [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+  [36m>[39m
+    [36m<span[39m
+      [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+    [36m>[39m
+      [0m2[0m
+      [0m checks[0m
+    [36m</span>[39m
+  [36m</div>[39m
+  [36m<span[39m
+    [33maria-hidden[39m=[32m"true"[39m
+    [33mclass[39m=[32m"_triggerArrow_bdae77 "[39m
+  [36m>[39m
+    [0mΓû╝[0m
+  [36m</span>[39m
+[36m</button>[39m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or 
+`findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[39m
+  [36m<div />[39m
+  [36m<div />[39m
+  [36m<div />[39m
+  [36m<div />[39m
+  [36m<div />[39m
+  [36m<div />[39m
+  [36m<div />[39m
+  [36m<div />[39m
+  [36m<div />[39m
+  [36m<div />[39m
+  [36m<div />[39m
+  [36m<div />[39m
+  [36m<div />[39m
+  [36m<div />[39m
+  [36m<div />[39m
+  [36m<div />[39m
+  [36m<div>[39m
+    [36m<div[39m
+      [33mclass[39m=[32m"_container_bdae77"[39m
+    [36m>[39m
+      [36m<button[39m
+        [33maria-controls[39m=[32m"evidence-content"[39m
+        [33maria-expanded[39m=[32m"true"[39m
+        [33mclass[39m=[32m"_trigger_bdae77"[39m
+      [36m>[39m
+        [36m<span[39m
+          [33mclass[39m=[32m"_triggerIcon_bdae77"[39m
+        [36m>[39m
+          [0m≡ƒôï[0m
+        [36m</span>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"_triggerContent_bdae77"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"_triggerText_bdae77"[39m
+          [36m>[39m
+            [0mReceipts[0m
+          [36m</span>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"_triggerSubtext_bdae77"[39m
+          [36m>[39m
+            [0mNo tricks. Just proof.[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"_triggerSummary_bdae77"[39m
+        [36m>[39m
+          [36m<span[39m
+            [33mclass[39m=[32m"_summaryBadge_bdae77"[39m
+          [36m>[39m
+            [0m2[0m
+            [0m checks[0m
+          [36m</span>[39m
+        [36m</div>[39m
+        [36m<span[39m
+          [33maria-hidden[39m=[32m"true"[39m
+          [33mclass[39m=[32m"_triggerArrow_bdae77 _arrowOpen_bdae77"[39m
+        [36m>[39m
+          [0mΓû╝[0m
+        [36m</span>[39m
+      [36m</button>[39m
+      [36m<div[39m
+        [33maria-label[39m=[32m"Evidence details"[39m
+        [33mclass[39m=[32m"_content_bdae77"[39m
+        [33mid[39m=[32m"evidence-content"[39m
+        [33mrole[39m=[32m"region"[39m
+      [36m>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"_header_bdae77"[39m
+        [36m>[39m
+          [36m<h3[39m
+            [33mclass[39m=[32m"_title_bdae77"[39m
+          [36m>[39m
+            [0mNo tricks. Just proof.[0m
+          [36m</h3>[39m
+          [36m<p[39m
+            [33mclass[39m=[32m"_subtitle_bdae77"[39m
+          [36m>[39m
+            [0mTransparent evidence for every decision[0m
+          [36m</p>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"_section_bdae77"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-controls[39m=[32m"rules-section"[39m
+            [33maria-expanded[39m=[32m"true"[39m
+            [33mclass[39m=[32m"_sectionHeader_bdae77"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"_sectionIcon_bdae77"[39m
+            [36m>[39m
+              [0m≡ƒô£[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"_sectionTitle_bdae77"[39m
+            [36m>[39m
+              [0mRules Fired[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"_sectionCount_bdae77"[39m
+            [36m>[39m
+              [0m1[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"_sectionArrow_bdae77 _arrowOpen_bdae77"[39m
+            [36m>[39m
+              [0mΓû╝[0m
+            [36m</span>[39m
+          [36m</button>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"_sectionContent_bdae77"[39m
+            [33mid[39m=[32m"rules-section"[39m
+          [36m>[39m
+            [36m<ul[39m
+              [33mclass[39m=[32m"_rulesList_bdae77"[39m
+            [36m>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"_ruleItem_bdae77 _warn_bdae77"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"_ruleIcon_bdae77"[39m
+                [36m>[39m
+                  [0mΓÜá∩╕Å[0m
+                [36m</span>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"_ruleContent_bdae77"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"_ruleName_bdae77"[39m
+                  [36m>[39m
+                    [0m"[0m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"_ruleDescription_bdae77"[39m
+                  [36m>[39m
+                    [0m}[0m
+                  [36m</span>[39m
+                [36m</div>[39m
+              [36m</li>[39m
+            [36m</ul>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"_section_bdae77"[39m
+        [36m>[39m
+          [36m<button[39m
+            [33maria-controls[39m=[32m"matched-text-section"[39m
+            [33maria-expanded[39m=[32m"true"[39m
+            [33mclass[39m=[32m"_sectionHeader_bdae77"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"_sectionIcon_bdae77"[39m
+            [36m>[39m
+              [0m≡ƒöì[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"_sectionTitle_bdae77"[39m
+            [36m>[39m
+              [0mMatched Text[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"_sectionCount_bdae77"[39m
+            [36m>[39m
+              [0m1[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"_sectionArrow_bdae77 _arrowOpen_bdae77"[39m
+            [36m>[39m
+              [0mΓû╝[0m
+            [36m</span>[39m
+          [36m</button>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"_sectionContent_bdae77"[39m
+            [33mid[39m=[32m"matched-text-section"[39m
+          [36m>[39m
+            [36m<ul[39m
+              [33mclass[39m=[32m"_matchedList_bdae77"[39m
+            [36m>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"_matchedItem_bdae77"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"_matchedSnippet_bdae77"[39m
+                [36m>[39m
+                  [36m<code[39m
+                    [33mclass[39m=[32m"_snippetText_bdae77"[39m
+                  [36m>[39m
+                    [36m<span>[39m
+                      [0m,[0m
+                      [36m<mark[39m
+                        [33mclass[39m=[32m"_highlight_bdae77"[39m
+                      [36m>[39m
+                        [0mBH*4C92miMgqE[0m
+                      [36m</mark>[39m
+                      [0mv:j^h3%X6[0m
+                    [36m</span>[39m
+                  [36m</code>[39m
+          ...
+[90m [2mΓ¥»[22m Object.getElementError 
+node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2mΓ¥»[22m getElementError 
+node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:[2m20:35[22m[39m
+[90m [2mΓ¥»[22m getMultipleElementsFoundError 
+node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:[2m23:10[22m[39m
+[90m [2mΓ¥»[22m 
+node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:[2m55:13[22m[39m
+[90m [2mΓ¥»[22m 
+node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2mΓ¥»[22m src/components/__tests__/EvidenceDrawer.property.spec.tsx:[2m266:34[22m[39m
+[90m [2mΓ¥»[22m Property.predicate node_modules/fast-check/lib/check/property/Property.js:[2m14:54[22m[39m
+[90m [2mΓ¥»[22m Property.run 
+node_modules/fast-check/lib/check/property/Property.generic.js:[2m43:33[22m[39m
+[90m [2mΓ¥»[22m runIt node_modules/fast-check/lib/check/runner/Runner.js:[2m14:30[22m[39m
+[90m [2mΓ¥»[22m check node_modules/fast-check/lib/check/runner/Runner.js:[2m54:11[22m[39m
+
+[31m[2mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[1/5]ΓÄ»[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/__tests__/ProofStrip.spec.tsx[2m > [22mProofStrip[2m > 
+[22mshould have proper structure with checks and outputs sections
+[31m[1mError[22m: 
+[2mexpect([22m[31melement[31m[2m).toHaveClass([22m[32m[32m"proofStrip"[32m[31m[2m)[22m
+
+Expected the element to have class:
+[32m  proofStrip[31m
+Received:
+[31m  _container_7bec23[31m[39m
+[36m [2mΓ¥»[22m src/components/__tests__/ProofStrip.spec.tsx:[2m29:34[22m[39m
+    [90m 27| [39m    
+    [90m 28| [39m    [90m// Should have the main container[39m
+    [90m 29| [39m    [34mexpect[39m(container[33m.[39mfirstChild)[33m.[39m[34mtoHaveClass[39m([32m'pro
+ofStrip'[39m)[33m;[39m
+    [90m   | [39m                                 [31m^[39m
+    [90m 30| [39m  })[33m;[39m
+    [90m 31| [39m
+
+[31m[2mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[2/5]ΓÄ»[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/__tests__/ProofStrip.spec.tsx[2m > [22mProofStrip[2m > 
+[22mshould render with glassmorphism styling
+[31m[1mError[22m: [2mexpect([22m[31mreceived[31m[2m).toBeInTheDocument()[22m
+
+[31mreceived[31m value must be an HTMLElement or an SVGElement.
+[39m
+[36m [2mΓ¥»[22m src/components/__tests__/ProofStrip.spec.tsx:[2m37:24[22m[39m
+    [90m 35| [39m    [90m// Check that the component has the expected class[39m
+    [90m 36| [39m    [35mconst[39m proofStrip [33m=[39m 
+container[33m.[39m[34mquerySelector[39m([32m'.proofStrip'[39m)[33m;[39m
+    [90m 37| [39m    [34mexpect[39m(proofStrip)[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m   | [39m                       [31m^[39m
+    [90m 38| [39m  })[33m;[39m
+    [90m 39| [39m
+
+[31m[2mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[3/5]ΓÄ»[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > 
+[22mReceiptsDrawer[2m > [22mshould expand on click
+[31m[1mTestingLibraryElementError[22m: Found multiple elements with the text: /12/
+
+Here are the matching elements:
+
+Ignored nodes: comments, script, style
+[36m<code[31m
+  [33mclass[31m=[32m"_metaValue_4e60c4"[31m
+[36m>[31m
+  [0mtest-123[0m
+[36m</code>[31m
+
+Ignored nodes: comments, script, style
+[36m<span[31m
+  [33mclass[31m=[32m"_metaValue_4e60c4"[31m
+[36m>[31m
+  [0m12[0m
+[36m</span>[31m
+
+(If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or 
+`findAllByText`)).
+
+Ignored nodes: comments, script, style
+[36m<body>[31m
+  [36m<div>[31m
+    [36m<div[31m
+      [33mclass[31m=[32m"_container_4e60c4"[31m
+    [36m>[31m
+      [36m<button[31m
+        [33maria-controls[31m=[32m"receipts-content"[31m
+        [33maria-expanded[31m=[32m"true"[31m
+        [33mclass[31m=[32m"_trigger_4e60c4"[31m
+      [36m>[31m
+        [36m<span[31m
+          [33mclass[31m=[32m"_triggerIcon_4e60c4"[31m
+        [36m>[31m
+          [0m≡ƒôï[0m
+        [36m</span>[31m
+        [36m<span[31m
+          [33mclass[31m=[32m"_triggerText_4e60c4"[31m
+        [36m>[31m
+          [0mReceipts[0m
+        [36m</span>[31m
+        [36m<span[31m
+          [33mclass[31m=[32m"_triggerSubtext_4e60c4"[31m
+        [36m>[31m
+[2m Test Files [22m [1m[31m3 failed[39m[22m[2m | [22m[1m[32m8 passed[39m[22m[90m (11)[39m
+[2m      Tests [22m [1m[31m5 failed[39m[22m[2m | [22m[1m[32m64 passed[39m[22m[90m (69)[39m
+[2m   Start at [22m 17:05:46
+[2m   Duration [22m 102.31s[2m (transform 878ms, setup 2.65s, collect 7.80s, tests 109.25s, environment 19.29s, prepare 4.69s)[22m
+
+          [0mNo tricks. Just proof.[0m
+        [36m</span>[31m
+        [36m<span[31m
+          [33maria-hidden[31m=[32m"true"[31m
+          [33mclass[31m=[32m"_triggerArrow_4e60c4"[31m
+        [36m>[31m
+          [0mΓû╝[0m
+        [36m</span>[31m
+      [36m</button>[31m
+      [36m<div[31m
+        [33mclass[31m=[32m"_content_4e60c4"[31m
+        [33mid[31m=[32m"receipts-content"[31m
+      [36m>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"_header_4e60c4"[31m
+        [36m>[31m
+          [36m<h3[31m
+            [33mclass[31m=[32m"_title_4e60c4"[31m
+          [36m>[31m
+            [0mWhy this verdict?[0m
+          [36m</h3>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"_subtitle_4e60c4"[31m
+          [36m>[31m
+            [0mTransparent evidence for every decision[0m
+          [36m</p>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"_meta_4e60c4"[31m
+        [36m>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"_metaItem_4e60c4"[31m
+          [36m>[31m
+            [36m<span[31m
+              [33mclass[31m=[32m"_metaLabel_4e60c4"[31m
+            [36m>[31m
+              [0mRequest ID:[0m
+            [36m</span>[31m
+            [36m<code[31m
+              [33mclass[31m=[32m"_metaValue_4e60c4"[31m
+            [36m>[31m
+              [0mtest-123[0m
+            [36m</code>[31m
+          [36m</div>[31m
+          [36m<div[31m
+            [33mclass[31m=[32m"_metaItem_4e60c4"[31m
+          [36m>[31m
+            [36m<span[31m
+              [33mclass[31m=[32m"_metaLabel_4e60c4"[31m
+            [36m>[31m
+              [0mChecks run:[0m
+            [36m</span>[31m
+            [36m<span[31m
+              [33mclass[31m=[32m"_metaValue_4e60c4"[31m
+            [36m>[31m
+              [0m12[0m
+            [36m</span>[31m
+          [36m</div>[31m
+        [36m</div>[31m
+        [36m<div[31m
+          [33mclass[31m=[32m"_empty_4e60c4"[31m
+        [36m>[31m
+          [36m<p>[31m
+            [0mNo policy violations detected[0m
+          [36m</p>[31m
+          [36m<p[31m
+            [33mclass[31m=[32m"_emptySubtext_4e60c4"[31m
+          [36m>[31m
+            [0mAll checks passed successfully[0m
+          [36m</p>[31m
+        [36m</div>[31m
+      [36m</div>[31m
+    [36m</div>[31m
+  [36m</div>[31m
+[36m</body>[31m[39m
+[90m [2mΓ¥»[22m Object.getElementError 
+node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/config.js:[2m37:19[22m[39m
+[90m [2mΓ¥»[22m getElementError 
+node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:[2m20:35[22m[39m
+[90m [2mΓ¥»[22m getMultipleElementsFoundError 
+node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:[2m23:10[22m[39m
+[90m [2mΓ¥»[22m 
+node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:[2m55:13[22m[39m
+[90m [2mΓ¥»[22m 
+node_modules/@testing-library/react/node_modules/@testing-library/dom/dist/query-helpers.js:[2m95:19[22m[39m
+[36m [2mΓ¥»[22m src/components/__tests__/ReceiptsDrawer.spec.tsx:[2m22:19[22m[39m
+    [90m 20| [39m    [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([32m'Why this 
+verdict?'[39m))[33m.[39m[34mtoBeInTheDocument[39m()[33m;[39m
+    [90m 21| [39m    [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([36m/test-123/[39m))[33m.[39m[3
+4mtoBeInTheDocument[39m()[33m;[39m
+    [90m 22| [39m    [34mexpect[39m(screen[33m.[39m[34mgetByText[39m([36m/12/[39m))[33m.[39m[34mtoBe
+InTheDocument[39m()[33m;[39m
+    [90m   | [39m                  [31m^[39m
+    [90m 23| [39m  })[33m;[39m
+    [90m 24| [39m
+
+[31m[2mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[4/5]ΓÄ»[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > 
+[22mReceiptsDrawer[2m > [22mshould close on ESC key
+[31m[1mError[22m: [2mexpect([22m[31melement[31m[2m).not.toBeInTheDocument()[22m
+
+[31mexpected document not to contain element, found <h3
+  class="_title_4e60c4"
+>
+  Why this verdict?
+</h3> instead[31m[39m
+[36m [2mΓ¥»[22m src/components/__tests__/ReceiptsDrawer.spec.tsx:[2m76:57[22m[39m
+    [90m 74| [39m    [90m// Press ESC[39m
+    [90m 75| [39m    [35mawait[39m user[33m.[39m[34mkeyboard[39m([32m'{Escape}'[39m)[33m;[39m
+    [90m 76| [39m    [34mexpect[39m(screen[33m.[39m[34mqueryByText[39m([32m'Why this 
+verdict?'[39m))[33m.[39mnot[33m.[39m[34mtoBeInTheDocum[39mΓÇª
+    [90m   | [39m                                                        [31m^[39m
+    [90m 77| [39m  })[33m;[39m
+    [90m 78| [39m
+
+[31m[2mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[5/5]ΓÄ»[22m[39m
+

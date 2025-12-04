@@ -1,0 +1,353 @@
+/**
+ * ClaimLens Go - Kiroween Theme
+ * Premium "Haunted Lens" aesthetic with proof-first design
+ * 
+ * Requirements: 1.5, 3.6
+ * - Subtle grain texture overlay
+ * - Soft fog gradients
+ * - prefers-reduced-motion support
+ */
+
+/* === KIROWEEN GRAIN TEXTURE OVERLAY === */
+.kw-grain-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--kw-grain-opacity, 0.03);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.5"/></svg>');
+}
+
+/* === KIROWEEN FOG GRADIENT OVERLAY === */
+.kw-fog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background: var(--kw-fog-vignette);
+}
+
+/* === KIROWEEN MIST GRADIENT BACKGROUND === */
+/* Very subtle, non-distracting background gradient - Requirements: 2.3, 2.6 */
+.mist-gradient {
+  background: radial-gradient(
+    ellipse at 50% 20%,
+    rgba(20, 184, 166, 0.03) 0%,
+    rgba(11, 18, 32, 0) 50%
+  );
+}
+
+/* === KIROWEEN SPECTRAL GLOW EFFECTS === */
+.kw-glow-teal {
+  box-shadow: var(--kw-glow-teal);
+}
+
+.kw-glow-mint {
+  box-shadow: var(--kw-glow-mint);
+}
+
+.kw-glow-ember {
+  box-shadow: var(--kw-glow-ember);
+}
+
+.kw-glow-violet {
+  box-shadow: var(--kw-glow-violet);
+}
+
+/* === KIROWEEN GHOST LIGHT ACCENTS === */
+/* Subtle glow effects for interactive elements - Requirements: 2.2 */
+.ghost-light-teal {
+  box-shadow: 0 0 16px rgba(20, 184, 166, 0.2);
+  transition: box-shadow var(--transition-base, 180ms cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+.ghost-light-teal:hover {
+  box-shadow: 0 0 24px rgba(20, 184, 166, 0.3);
+}
+
+.ghost-light-violet {
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.2);
+  transition: box-shadow var(--transition-base, 180ms cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+.ghost-light-violet:hover {
+  box-shadow: 0 0 24px rgba(139, 92, 246, 0.3);
+}
+
+/* === KIROWEEN VERDICT GLOW STATES === */
+.kw-verdict-allow {
+  box-shadow: var(--kw-glow-allow);
+  border-color: var(--kw-allow);
+}
+
+.kw-verdict-modify {
+  box-shadow: var(--kw-glow-ember);
+  border-color: var(--kw-modify);
+}
+
+.kw-verdict-avoid {
+  box-shadow: var(--kw-glow-avoid);
+  border-color: var(--kw-avoid);
+}
+
+/* === KIROWEEN EMBER ACCENT (WARNINGS ONLY) === */
+/* Restrained ember accent for Avoid/Caution states - Requirements: 2.4 */
+.ember-accent {
+  border-left: 3px solid var(--kw-ember-orange, #F59E0B);
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.ember-glow {
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.15);
+}
+
+
+/* === KIROWEEN GLASSMORPHISM ENHANCED === */
+.kw-glass {
+  background: rgba(15, 22, 40, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(248, 250, 252, 0.12);
+  border-radius: var(--radius-lg, 16px);
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(248, 250, 252, 0.05);
+}
+
+.kw-glass-elevated {
+  background: rgba(15, 22, 40, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(248, 250, 252, 0.15);
+  border-radius: var(--radius-lg, 16px);
+}
+
+/* === KIROWEEN SPECTRAL SCAN ANIMATION === */
+@keyframes kw-spectral-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(20, 184, 166, 0.2);
+    opacity: 1;
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(20, 184, 166, 0.4);
+    opacity: 0.9;
+  }
+}
+
+.kw-spectral-scan {
+  animation: kw-spectral-pulse 1.5s ease-in-out infinite;
+}
+
+/* === KIROWEEN FOCUS INDICATORS (WCAG AA) === */
+.kw-focus-ring:focus,
+.kw-focus-ring:focus-visible {
+  outline: 2px solid var(--kw-spectral-teal, #14B8A6);
+  outline-offset: 2px;
+}
+
+/* Interactive elements focus state */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--kw-spectral-teal, #14B8A6);
+  outline-offset: 2px;
+}
+
+/* === KIROWEEN BUTTON STYLES === */
+.kw-btn-primary {
+  background: var(--kw-spectral-teal, #14B8A6);
+  color: var(--color-ink, #0B1220);
+  border: none;
+  padding: var(--space-3, 0.75rem) var(--space-6, 1.5rem);
+  border-radius: var(--radius-md, 12px);
+  font-weight: var(--font-semibold, 600);
+  cursor: pointer;
+  transition: var(--transition-base, 180ms cubic-bezier(0.4, 0, 0.2, 1));
+  min-height: 44px;
+  min-width: 44px;
+  box-shadow: 0 0 16px rgba(20, 184, 166, 0.2);
+}
+
+.kw-btn-primary:hover {
+  background: var(--kw-spectral-mint, #2DD4BF);
+  box-shadow: 0 0 24px rgba(20, 184, 166, 0.3);
+}
+
+.kw-btn-secondary {
+  background: transparent;
+  color: var(--kw-spectral-teal, #14B8A6);
+  border: 1px solid var(--kw-spectral-teal, #14B8A6);
+  padding: var(--space-3, 0.75rem) var(--space-6, 1.5rem);
+  border-radius: var(--radius-md, 12px);
+  font-weight: var(--font-semibold, 600);
+  cursor: pointer;
+  transition: var(--transition-base, 180ms cubic-bezier(0.4, 0, 0.2, 1));
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.kw-btn-secondary:hover {
+  background: rgba(20, 184, 166, 0.1);
+  box-shadow: 0 0 16px rgba(20, 184, 166, 0.2);
+}
+
+/* === KIROWEEN BADGE STYLES === */
+.kw-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-sm, 0.875rem);
+  font-weight: var(--font-medium, 500);
+}
+
+.kw-badge-allow {
+  background: rgba(16, 185, 129, 0.15);
+  color: var(--kw-allow, #10B981);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+.kw-badge-modify {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--kw-modify, #F59E0B);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.kw-badge-avoid {
+  background: rgba(239, 68, 68, 0.15);
+  color: var(--kw-avoid, #EF4444);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* === PREFERS-REDUCED-MOTION SUPPORT === */
+@media (prefers-reduced-motion: reduce) {
+  /* Disable grain and fog overlays */
+  .kw-grain-overlay,
+  .kw-fog-overlay {
+    display: none;
+  }
+  
+  /* Disable mist gradient - Requirements: 2.6 */
+  .mist-gradient {
+    background: none;
+  }
+  
+  /* Disable spectral scan animation */
+  .kw-spectral-scan {
+    animation: none;
+    box-shadow: var(--kw-glow-teal);
+  }
+  
+  /* Reduce all animations to near-instant */
+  .kw-btn-primary,
+  .kw-btn-secondary,
+  .kw-glass,
+  .kw-glass-elevated {
+    transition-duration: 0.01ms !important;
+  }
+  
+  /* Remove glow effects that might be distracting */
+  .kw-glow-teal,
+  .kw-glow-mint,
+  .kw-glow-ember,
+  .kw-glow-violet,
+  .ghost-light-teal,
+  .ghost-light-violet,
+  .ember-glow {
+    box-shadow: none;
+  }
+}
+
+/* === ACCESSIBILITY: REDUCED TRANSPARENCY === */
+@media (prefers-reduced-transparency: reduce) {
+  .kw-glass,
+  .kw-glass-elevated {
+    background: var(--color-surface, #0F1628);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  
+  .kw-grain-overlay,
+  .kw-fog-overlay {
+    display: none;
+  }
+}
+
+/* === ACCESSIBILITY: HIGH CONTRAST MODE === */
+@media (prefers-contrast: high) {
+  .kw-glass,
+  .kw-glass-elevated {
+    background: var(--color-surface, #0F1628);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-width: 2px;
+  }
+  
+  .kw-focus-ring:focus,
+  .kw-focus-ring:focus-visible,
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible,
+  [tabindex]:focus-visible {
+    outline-width: 3px;
+  }
+  
+  .kw-badge {
+    border-width: 2px;
+  }
+}
+
+/* === KIROWEEN CARD STYLES === */
+.kw-card {
+  background: var(--glass-bg, rgba(15, 22, 40, 0.65));
+  backdrop-filter: blur(var(--glass-blur, 16px));
+  -webkit-backdrop-filter: blur(var(--glass-blur, 16px));
+  border: 1px solid var(--glass-border, rgba(248, 250, 252, 0.12));
+  border-radius: var(--radius-lg, 16px);
+  padding: var(--space-4, 1rem);
+  transition: var(--transition-base, 180ms cubic-bezier(0.4, 0, 0.2, 1));
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(248, 250, 252, 0.05);
+}
+
+.kw-card:hover {
+  border-color: rgba(248, 250, 252, 0.2);
+  box-shadow: var(--shadow-md, 0 8px 24px rgba(0, 0, 0, 0.2));
+}
+
+/* === KIROWEEN TEXT GRADIENT === */
+.kw-text-gradient {
+  background: linear-gradient(135deg, var(--kw-spectral-teal, #14B8A6), var(--kw-spectral-mint, #2DD4BF));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* === KIROWEEN DIVIDER === */
+.kw-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--glass-border, rgba(248, 250, 252, 0.1)) 20%,
+    var(--glass-border, rgba(248, 250, 252, 0.1)) 80%,
+    transparent 100%
+  );
+  border: none;
+  margin: var(--space-4, 1rem) 0;
+}

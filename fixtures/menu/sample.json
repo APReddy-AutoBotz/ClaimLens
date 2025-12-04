@@ -1,0 +1,11 @@
+{
+  "id": "CK-123",
+  "name": "Honey Almond Granola",
+  "description": "100% pure honey with crunchy almonds. Call +91 98765 43210 for bulk.",
+  "ingredients": "Oats, Almonds (tree nuts), Honey, Sunflower Oil",
+  "nutrition": {
+    "calories": "210 kcal per serving",
+    "sugar_g": 24,
+    "sodium_mg": 650
+  }
+}

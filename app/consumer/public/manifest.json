@@ -1,0 +1,52 @@
+{
+  "name": "ClaimLens Go",
+  "short_name": "ClaimLens",
+  "description": "Scan food items for safety and claims",
+  "start_url": "/scan",
+  "display": "standalone",
+  "theme_color": "#0B1220",
+  "background_color": "#0F1628",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["food", "health", "lifestyle"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Scan",
+      "short_name": "Scan",
+      "description": "Scan a food item",
+      "url": "/scan",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "History",
+      "short_name": "History",
+      "description": "View scan history",
+      "url": "/history",
+      "icons": [
+        {
+          "src": "/icons/icon-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ]
+}

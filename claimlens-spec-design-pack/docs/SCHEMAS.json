@@ -1,0 +1,156 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "MenuItem": {
+      "type": "object",
+      "required": [
+        "id",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "ingredients": {
+          "type": "string"
+        },
+        "nutrition": {
+          "type": "object",
+          "properties": {
+            "calories": {
+              "type": [
+                "string",
+                "number"
+              ]
+            },
+            "sugar_g": {
+              "type": [
+                "number",
+                "null"
+              ]
+            },
+            "sodium_mg": {
+              "type": [
+                "number",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "Reason": {
+      "type": "object",
+      "properties": {
+        "transform": {
+          "type": "string"
+        },
+        "why": {
+          "type": "string"
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "transform",
+        "why"
+      ]
+    },
+    "Verdict": {
+      "type": "object",
+      "properties": {
+        "verdict": {
+          "type": "string",
+          "enum": [
+            "allow",
+            "modify",
+            "block"
+          ]
+        },
+        "changes": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "reasons": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Reason"
+          }
+        },
+        "audit_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "verdict",
+        "reasons"
+      ]
+    },
+    "AuditRecord": {
+      "type": "object",
+      "properties": {
+        "ts": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "profile": {
+          "type": "string"
+        },
+        "route": {
+          "type": "string"
+        },
+        "item_id": {
+          "type": "string"
+        },
+        "transforms": {
+          "type": "array",
+          "items": {
+            "type": "object"
+          }
+        },
+        "verdict": {
+          "$ref": "#/definitions/Verdict"
+        },
+        "latency_ms": {
+          "type": "number"
+        }
+      }
+    },
+    "Badge": {
+      "type": "object",
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "allergen",
+            "claim_warning",
+            "risk",
+            "ok"
+          ]
+        },
+        "label": {
+          "type": "string"
+        },
+        "explanation": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "label"
+      ]
+    }
+  }
+}

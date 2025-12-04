@@ -1,0 +1,44 @@
+version: 1.0.0
+
+profiles:
+  menushield_in:
+    name: MenuShield Pre-Publish Gate
+    routes:
+      - path: /v1/menu/feed
+        transforms:
+          - redact.pii
+          - detect.allergens
+          - rewrite.disclaimer
+        latency_budget_ms: 150
+
+      - path: /v1/menu/validate
+        transforms:
+          - redact.pii
+          - rewrite.disclaimer
+        latency_budget_ms: 100
+
+  claimlens_go:
+    name: ClaimLens Go Browser Extension
+    routes:
+      - path: /v1/web/ingest
+        transforms:
+          - detect.allergens
+          - rewrite.disclaimer
+        latency_budget_ms: 120
+
+      - path: /v1/web/overlay
+        transforms:
+          - detect.allergens
+        latency_budget_ms: 80
+
+  claimlens_consumer:
+    name: ClaimLens B2C Consumer Mode
+    routes:
+      - path: /v1/consumer/scan
+        transforms:
+          - detect.allergens
+          - detect.recalls
+          - detect.weasel_words
+          - rewrite.disclaimer
+          - calculate.trust_score
+        latency_budget_ms: 1500

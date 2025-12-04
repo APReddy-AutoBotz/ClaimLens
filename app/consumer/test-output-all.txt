@@ -1,0 +1,646 @@
+﻿
+> @claimlens/consumer@0.1.0 test
+> vitest run --run
+
+
+[7m[1m[36m RUN [39m[22m[27m [36mv1.6.1[39m [90mE:/claimlens-starter/app/consumer[39m
+
+ [32mΓ£ô[39m src/utils/__tests__/accessibility.spec.ts [2m ([22m[2m4 tests[22m[2m)[22m[90m 28[2mms[22m[39m
+node.exe : [90mstderr[2m | src/components/__tests__/ProofCard.spec.tsx[2m > [22m[2mProofCard Component[2m 
+> [22m[2mshould render canvas element[22m[39m
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Users\mailt\AppData\Roaming\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([90mstderr[2m...ement[22m[39m:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at HTMLCanvasElementImpl.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\generated\HTMLCanvasElement.js:131:58)
+    at generateQRCode (E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:59:28)
+    at E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:74:5
+    at commitHookEffectListMount 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+    at commitPassiveMountOnFiber 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24970:11)
+    at commitPassiveMountEffects_complete 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24930:9)
+    at commitPassiveMountEffects_begin 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24917:7)
+    at commitPassiveMountEffects 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24905:3) 
+[90mundefined[39m
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at HTMLCanvasElementImpl.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\generated\HTMLCanvasElement.js:131:58)
+    at E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:82:24
+    at commitHookEffectListMount 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+    at commitPassiveMountOnFiber 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24970:11)
+    at commitPassiveMountEffects_complete 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24930:9)
+    at commitPassiveMountEffects_begin 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24917:7)
+    at commitPassiveMountEffects 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24905:3)
+    at flushPassiveEffectsImpl 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:27078:3) 
+[90mundefined[39m
+
+[90mstderr[2m | src/components/__tests__/ProofCard.spec.tsx[2m > [22m[2mProofCard Component[2m > 
+[22m[2mshould call onGenerated callback when image is ready[22m[39m
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at HTMLCanvasElementImpl.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\generated\HTMLCanvasElement.js:131:58)
+    at E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:82:24
+    at commitHookEffectListMount 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+    at commitPassiveMountOnFiber 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24970:11)
+    at commitPassiveMountEffects_complete 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24930:9)
+    at commitPassiveMountEffects_begin 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24917:7)
+    at commitPassiveMountEffects 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24905:3)
+    at flushPassiveEffectsImpl 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:27078:3) 
+[90mundefined[39m
+
+ [32mΓ£ô[39m src/components/__tests__/ProofStrip.spec.tsx [2m ([22m[2m4 tests[22m[2m)[22m[33m 438[2mms[22m[39m
+[90mstderr[2m | src/components/__tests__/ProofCard.spec.tsx[2m > [22m[2mProofCard Component[2m > 
+[22m[2mshould handle all verdict types[22m[39m
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at HTMLCanvasElementImpl.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\generated\HTMLCanvasElement.js:131:58)
+    at E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:82:24
+    at commitHookEffectListMount 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+    at commitPassiveMountOnFiber 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24970:11)
+    at commitPassiveMountEffects_complete 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24930:9)
+    at commitPassiveMountEffects_begin 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24917:7)
+    at commitPassiveMountEffects 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24905:3)
+    at flushPassiveEffectsImpl 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:27078:3) 
+[90mundefined[39m
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at HTMLCanvasElementImpl.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\generated\HTMLCanvasElement.js:131:58)
+    at E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:82:24
+    at commitHookEffectListMount 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+    at commitPassiveMountOnFiber 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24970:11)
+    at commitPassiveMountEffects_complete 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24930:9)
+    at commitPassiveMountEffects_begin 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24917:7)
+    at commitPassiveMountEffects 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24905:3)
+    at flushPassiveEffectsImpl 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:27078:3) 
+[90mundefined[39m
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at HTMLCanvasElementImpl.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\generated\HTMLCanvasElement.js:131:58)
+    at E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:82:24
+    at commitHookEffectListMount 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+    at commitPassiveMountOnFiber 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24970:11)
+    at commitPassiveMountEffects_complete 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24930:9)
+    at commitPassiveMountEffects_begin 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24917:7)
+    at commitPassiveMountEffects 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24905:3)
+    at flushPassiveEffectsImpl 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:27078:3) 
+[90mundefined[39m
+
+[90mstderr[2m | src/components/__tests__/ProofCard.spec.tsx[2m > [22m[2mProofCard Component[2m > 
+[22m[2mshould handle empty reasons array[22m[39m
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at HTMLCanvasElementImpl.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\generated\HTMLCanvasElement.js:131:58)
+    at E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:82:24
+    at commitHookEffectListMount 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+    at commitPassiveMountOnFiber 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24970:11)
+    at commitPassiveMountEffects_complete 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24930:9)
+    at commitPassiveMountEffects_begin 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24917:7)
+    at commitPassiveMountEffects 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24905:3)
+    at flushPassiveEffectsImpl 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:27078:3) 
+[90mundefined[39m
+
+[90mstderr[2m | src/components/__tests__/ProofCard.spec.tsx[2m > [22m[2mProofCard Component[2m > 
+[22m[2mshould truncate long product names[22m[39m
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at HTMLCanvasElementImpl.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\generated\HTMLCanvasElement.js:131:58)
+    at E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:82:24
+    at commitHookEffectListMount 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+    at commitPassiveMountOnFiber 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24970:11)
+    at commitPassiveMountEffects_complete 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24930:9)
+    at commitPassiveMountEffects_begin 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24917:7)
+    at commitPassiveMountEffects 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24905:3)
+    at flushPassiveEffectsImpl 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:27078:3) 
+[90mundefined[39m
+
+ [33mΓ¥»[39m src/components/__tests__/ProofCard.spec.tsx [2m ([22m[2m5 tests[22m [2m|[22m [31m1 failed[39m[2m)[22m[33m 460[2mms[22m[39m
+[31m   [33mΓ¥»[31m src/components/__tests__/ProofCard.spec.tsx[2m > [22mProofCard Component[2m > [22mshould call onGenerated callback when image is ready[39m
+[31m     ΓåÆ expected "spy" to be called at least once[39m
+ [32mΓ£ô[39m src/utils/__tests__/accessibility-focus.property.spec.ts [2m ([22m[2m5 tests[22m[2m)[22m[90m 98[2mms[22m[39m
+ [32mΓ£ô[39m src/utils/__tests__/open-food-facts.spec.ts [2m ([22m[2m5 tests[22m[2m)[22m[33m 2496[2mms[22m[39m
+ [32mΓ£ô[39m src/components/__tests__/ModeSwitch.spec.tsx [2m ([22m[2m6 tests[22m[2m)[22m[33m 1433[2mms[22m[39m
+ [32mΓ£ô[39m src/components/__tests__/VerdictBadge.spec.tsx [2m ([22m[2m5 tests[22m[2m)[22m[33m 993[2mms[22m[39m
+[90mstderr[2m | src/utils/__tests__/share.spec.ts[2m > [22m[2mShare Utilities[2m > 
+[22m[2mshareContent[2m > [22m[2mshould handle share cancellation[22m[39m
+Web Share API failed, falling back to clipboard: DOMException {}
+
+ [33mΓ¥»[39m src/utils/__tests__/share.spec.ts [2m ([22m[2m8 tests[22m [2m|[22m [31m1 failed[39m[2m)[22m[90m 163[2mms[22m[39m
+[31m   [33mΓ¥»[31m src/utils/__tests__/share.spec.ts[2m > [22mShare Utilities[2m > [22mshareContent[2m > [22mshould handle share cancellation[39m
+[31m     ΓåÆ expected true to be false // Object.is equality[39m
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould expand on click[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould show empty state when no receipts[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould render receipts when provided[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould collapse when clicking trigger again[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould collapse when clicking trigger again[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould close on ESC key[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould close on ESC key[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould update ARIA expanded when opened[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould display correlation ID when provided[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+ [32mΓ£ô[39m src/pages/__tests__/Results.spec.tsx [2m ([22m[2m7 tests[22m[2m)[22m[33m 2253[2mms[22m[39m
+[90mstderr[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould render 
+empty state when no results[22m[39m
+ΓÜá∩╕Å React Router Future Flag Warning: React Router will begin wrapping state updates in 
+`React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more 
+information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+ΓÜá∩╕Å React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You 
+can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see 
+https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+[90mstdout[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould render results when data is in sessionStorage[22m[39m
+Scan Result: {
+  trust_score: [33m85[39m,
+  verdict: {
+    label: [32m'allow'[39m,
+    color: [32m'#10B981'[39m,
+    icon: [32m'Γ£ô'[39m,
+    explanation: [32m'This product meets safety standards with minimal concerns.'[39m
+  },
+  badges: [],
+  reasons: [],
+  breakdown: {
+    baseScore: [33m90[39m,
+    bannedClaimsDeduction: [33m0[39m,
+    recallDeduction: [33m0[39m,
+    allergenDeduction: [33m0[39m,
+    weaselWordDeduction: [33m0[39m,
+    cleanBonus: [33m10[39m,
+    finalScore: [33m85[39m
+  }
+}
+Product Info: [90mundefined[39m
+Scan Result: {
+  trust_score: [33m85[39m,
+  verdict: {
+    label: [32m'allow'[39m,
+    color: [32m'#10B981'[39m,
+    icon: [32m'Γ£ô'[39m,
+    explanation: [32m'This product meets safety standards with minimal concerns.'[39m
+  },
+  badges: [],
+  reasons: [],
+  breakdown: {
+    baseScore: [33m90[39m,
+    bannedClaimsDeduction: [33m0[39m,
+    recallDeduction: [33m0[39m,
+    allergenDeduction: [33m0[39m,
+    weaselWordDeduction: [33m0[39m,
+    cleanBonus: [33m10[39m,
+    finalScore: [33m85[39m
+  }
+}
+Product Info: [90mundefined[39m
+
+[90mstdout[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould render issues list when issues present[22m[39m
+Scan Result: {
+  trust_score: [33m60[39m,
+  verdict: {
+    label: [32m'caution'[39m,
+    color: [32m'#F59E0B'[39m,
+    icon: [32m'ΓÜá'[39m,
+    explanation: [32m'This product has some concerns.'[39m
+  },
+  badges: [
+    {
+      kind: [32m'warn'[39m,
+      label: [32m'Allergen Warning'[39m,
+      explanation: [32m'Contains peanuts'[39m
+    }
+  ],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+Scan Result: {
+  trust_score: [33m60[39m,
+  verdict: {
+    label: [32m'caution'[39m,
+    color: [32m'#F59E0B'[39m,
+    icon: [32m'ΓÜá'[39m,
+    explanation: [32m'This product has some concerns.'[39m
+  },
+  badges: [
+    {
+      kind: [32m'warn'[39m,
+      label: [32m'Allergen Warning'[39m,
+      explanation: [32m'Contains peanuts'[39m
+    }
+  ],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+
+[90mstdout[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould clamp trust score to 100 maximum[22m[39m
+Scan Result: {
+  trust_score: [33m150[39m,
+  verdict: {
+    label: [32m'allow'[39m,
+    color: [32m'#10B981'[39m,
+    icon: [32m'Γ£ô'[39m,
+    explanation: [32m'This product meets safety standards.'[39m
+  },
+  badges: [],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+Scan Result: {
+  trust_score: [33m150[39m,
+  verdict: {
+    label: [32m'allow'[39m,
+    color: [32m'#10B981'[39m,
+    icon: [32m'Γ£ô'[39m,
+    explanation: [32m'This product meets safety standards.'[39m
+  },
+  badges: [],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+
+[90mstdout[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould clamp trust score to 0 minimum[22m[39m
+Scan Result: {
+  trust_score: [33m-20[39m,
+  verdict: {
+    label: [32m'avoid'[39m,
+    color: [32m'#EF4444'[39m,
+    icon: [32m'Γ£ò'[39m,
+    explanation: [32m'This product has significant concerns.'[39m
+  },
+  badges: [],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+Scan Result: {
+  trust_score: [33m-20[39m,
+  verdict: {
+    label: [32m'avoid'[39m,
+    color: [32m'#EF4444'[39m,
+    icon: [32m'Γ£ò'[39m,
+    explanation: [32m'This product has significant concerns.'[39m
+  },
+  badges: [],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+
+[90mstdout[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould render receipts drawer[22m[39m
+Scan Result: {
+  trust_score: [33m75[39m,
+  verdict: {
+    label: [32m'caution'[39m,
+    color: [32m'#F59E0B'[39m,
+    icon: [32m'ΓÜá'[39m,
+    explanation: [32m'This product has some concerns.'[39m
+  },
+  badges: [],
+  reasons: [],
+  correlation_id: [32m'test-123'[39m
+}
+Product Info: [90mundefined[39m
+Scan Result: {
+  trust_score: [33m75[39m,
+  verdict: {
+    label: [32m'caution'[39m,
+    color: [32m'#F59E0B'[39m,
+    icon: [32m'ΓÜá'[39m,
+    explanation: [32m'This product has some concerns.'[39m
+  },
+  badges: [],
+  reasons: [],
+  correlation_id: [32m'test-123'[39m
+}
+Product Info: [90mundefined[39m
+
+[90mstdout[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould show improved verdict copy for clean products[22m[39m
+Scan Result: {
+  trust_score: [33m100[39m,
+  verdict: {
+    label: [32m'allow'[39m,
+    color: [32m'#10B981'[39m,
+    icon: [32m'Γ£ô'[39m,
+    explanation: [32m'This product meets safety standards.'[39m
+  },
+  badges: [],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+Scan Result: {
+  trust_score: [33m100[39m,
+  verdict: {
+    label: [32m'allow'[39m,
+    color: [32m'#10B981'[39m,
+    icon: [32m'Γ£ô'[39m,
+    explanation: [32m'This product meets safety standards.'[39m
+  },
+  badges: [],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould display checks run count when provided[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+[90mstderr[2m | src/components/__tests__/ReceiptsDrawer.spec.tsx[2m > [22m[2mReceiptsDrawer[2m > 
+[22m[2mshould render receipt details when available[22m[39m
+Warning: An update to ReceiptsDrawer2 inside a test was not wrapped in act(...).
+
+When testing, code that causes React state updates should be wrapped into act(...):
+
+act(() => {
+  /* fire events that update state */
+});
+/* assert on the output */
+
+This ensures that you're testing the behavior the user would see in the browser. Learn more at 
+https://reactjs.org/link/wrap-tests-with-act
+    at ReceiptsDrawer2 (E:\claimlens-starter\app\consumer\src\components\ReceiptsDrawer.tsx:8:3)
+
+ [32mΓ£ô[39m src/components/__tests__/ReceiptsDrawer.spec.tsx [2m ([22m[2m11 tests[22m[2m)[22m[33m 2564[2mms[22m[39m
+ [32mΓ£ô[39m src/pages/__tests__/Home.spec.tsx [2m ([22m[2m34 tests[22m[2m)[22m[33m 5065[2mms[22m[39m
+[90mstderr[2m | src/pages/__tests__/Home.spec.tsx[2m > [22m[2mHome Page[2m > [22m[2mHero Section[2m > 
+[22m[2mshould render the main title[22m[39m
+ΓÜá∩╕Å React Router Future Flag Warning: React Router will begin wrapping state updates in 
+`React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more 
+information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+ΓÜá∩╕Å React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You 
+can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see 
+https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+ [32mΓ£ô[39m src/components/__tests__/IssuesList.property.spec.tsx [2m ([22m[2m4 tests[22m[2m)[22m[33m 6183[2mms[22m[39m
+[90mstderr[2m | src/components/__tests__/IssuesList.property.spec.tsx[2m > [22m[2mIssuesList - 
+Property-Based Tests[2m > [22m[2mProperty 4: Issue Grouping Completeness - all issues are categorized into 
+exactly one group[22m[39m
+ΓÜá∩╕Å React Router Future Flag Warning: React Router will begin wrapping state updates in 
+`React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more 
+information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+ΓÜá∩╕Å React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You 
+can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see 
+https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+ [32mΓ£ô[39m src/components/__tests__/VerdictBanner.property.spec.tsx [2m ([22m[2m10 tests[22m[2m)[22m[33m 9449[2mms[22m[39m
+ [32mΓ£ô[39m src/components/__tests__/ScanProgress.property.spec.tsx [2m ([22m[2m6 tests[22m[2m)[22m[33m 12678[2mms[22m[39m
+ [32mΓ£ô[39m src/components/__tests__/EvidenceDrawer.property.spec.tsx [2m ([22m[2m6 tests[22m[2m)[22m[33m 22424[2mms[22m[39m
+
+[31mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[1m[7m Failed Tests 2 [27m[22mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/__tests__/ProofCard.spec.tsx[2m > [22mProofCard 
+Component[2m > [22mshould call onGenerated callback when image is ready
+[31m[1mAssertionError[22m: expected "spy" to be called at least once[39m
+[36m [2mΓ¥»[22m src/components/__tests__/ProofCard.spec.tsx:[2m37:25[22m[39m
+    [90m 35| [39m
+    [90m 36| [39m    [90m// onGenerated should be called with a data URL[39m
+    [90m 37| [39m    [34mexpect[39m(onGenerated)[33m.[39m[34mtoHaveBeenCalled[39m()[33m;[39m
+    [90m   | [39m                        [31m^[39m
+    [90m 38| [39m    [35mconst[39m dataUrl [33m=[39m 
+onGenerated[33m.[39mmock[33m.[39mcalls[[34m0[39m][[34m0[39m][33m;[39m
+    [90m 39| [39m    
+[34mexpect[39m(dataUrl)[33m.[39m[34mtoContain[39m([32m'data:image/png'[39m)[33m;[39m
+
+[31m[2mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[1/2]ΓÄ»[22m[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/utils/__tests__/share.spec.ts[2m > [22mShare Utilities[2m > 
+[22mshareContent[2m > [22mshould handle share cancellation
+[31m[1mAssertionError[22m: expected true to be false // Object.is equality[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[32m- false[39m
+[31m+ true[39m
+
+[36m [2mΓ¥»[22m src/utils/__tests__/share.spec.ts:[2m129:30[22m[39m
+    [90m127| [39m      [35mconst[39m result [33m=[39m [35mawait[39m 
+[34mshareContent[39m(shareData)[33m;[39m
+    [90m128| [39m
+    [90m129| [39m      
+[34mexpect[39m(result[33m.[39msuccess)[33m.[39m[34mtoBe[39m([35mfalse[39m)[33m;[39m
+    [90m   | [39m                             [31m^[39m
+    [90m130| [39m      
+[34mexpect[39m(result[33m.[39mmethod)[33m.[39m[34mtoBe[39m([32m'failed'[39m)[33m;[39m
+    [90m131| [39m      [34mexpect[39m(result[33m.[39merror)[33m.[39m[34mtoBe[39m([32m'Share 
+cancelled'[39m)[33m;[39m
+
+[31m[2mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[2/2]ΓÄ»[22m[39m
+
+[2m Test Files [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m13 passed[39m[22m[90m (15)[39m
+[2m      Tests [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m118 passed[39m[22m[90m (120)[39m
+[2m   Start at [22m 21:21:03
+[2m   Duration [22m 36.49s[2m (transform 5.18s, setup 15.72s, collect 36.83s, tests 66.72s, environment 99.69s, prepare 24.17s)[22m
+

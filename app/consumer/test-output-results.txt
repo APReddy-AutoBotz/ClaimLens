@@ -1,0 +1,223 @@
+﻿
+> @claimlens/consumer@0.1.0 test
+> vitest run --run --reporter=verbose src/pages/__tests__/Results.spec.tsx
+
+
+[7m[1m[36m RUN [39m[22m[27m [36mv1.6.1[39m [90mE:/claimlens-starter/app/consumer[39m
+
+node.exe : [90mstderr[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > 
+[22m[2mshould render empty state when no results[22m[39m
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Users\mailt\AppData\Roaming\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([90mstderr[2m...sults[22m[39m:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+ΓÜá∩╕Å React Router Future Flag Warning: React Router will begin wrapping state updates in 
+`React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more 
+information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+ΓÜá∩╕Å React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You 
+can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see 
+https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+
+[90mstdout[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould render results when data is in sessionStorage[22m[39m
+Scan Result: {
+  trust_score: [33m85[39m,
+  verdict: {
+    label: [32m'allow'[39m,
+    color: [32m'#10B981'[39m,
+    icon: [32m'Γ£ô'[39m,
+    explanation: [32m'This product meets safety standards with minimal concerns.'[39m
+  },
+  badges: [],
+  reasons: [],
+  breakdown: {
+    baseScore: [33m90[39m,
+    bannedClaimsDeduction: [33m0[39m,
+    recallDeduction: [33m0[39m,
+    allergenDeduction: [33m0[39m,
+    weaselWordDeduction: [33m0[39m,
+    cleanBonus: [33m10[39m,
+    finalScore: [33m85[39m
+  }
+}
+Product Info: [90mundefined[39m
+Scan Result: {
+  trust_score: [33m85[39m,
+  verdict: {
+    label: [32m'allow'[39m,
+    color: [32m'#10B981'[39m,
+    icon: [32m'Γ£ô'[39m,
+    explanation: [32m'This product meets safety standards with minimal concerns.'[39m
+  },
+  badges: [],
+  reasons: [],
+  breakdown: {
+    baseScore: [33m90[39m,
+    bannedClaimsDeduction: [33m0[39m,
+    recallDeduction: [33m0[39m,
+    allergenDeduction: [33m0[39m,
+    weaselWordDeduction: [33m0[39m,
+    cleanBonus: [33m10[39m,
+    finalScore: [33m85[39m
+  }
+}
+Product Info: [90mundefined[39m
+
+[90mstdout[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould render issues list when issues present[22m[39m
+Scan Result: {
+  trust_score: [33m60[39m,
+  verdict: {
+    label: [32m'caution'[39m,
+    color: [32m'#F59E0B'[39m,
+    icon: [32m'ΓÜá'[39m,
+    explanation: [32m'This product has some concerns.'[39m
+  },
+  badges: [
+    {
+      kind: [32m'warn'[39m,
+      label: [32m'Allergen Warning'[39m,
+      explanation: [32m'Contains peanuts'[39m
+    }
+  ],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+Scan Result: {
+  trust_score: [33m60[39m,
+  verdict: {
+    label: [32m'caution'[39m,
+    color: [32m'#F59E0B'[39m,
+    icon: [32m'ΓÜá'[39m,
+    explanation: [32m'This product has some concerns.'[39m
+  },
+  badges: [
+    {
+      kind: [32m'warn'[39m,
+      label: [32m'Allergen Warning'[39m,
+      explanation: [32m'Contains peanuts'[39m
+    }
+  ],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+
+[90mstdout[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould clamp trust score to 100 maximum[22m[39m
+Scan Result: {
+  trust_score: [33m150[39m,
+  verdict: {
+    label: [32m'allow'[39m,
+    color: [32m'#10B981'[39m,
+    icon: [32m'Γ£ô'[39m,
+    explanation: [32m'This product meets safety standards.'[39m
+  },
+  badges: [],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+Scan Result: {
+  trust_score: [33m150[39m,
+  verdict: {
+    label: [32m'allow'[39m,
+    color: [32m'#10B981'[39m,
+    icon: [32m'Γ£ô'[39m,
+    explanation: [32m'This product meets safety standards.'[39m
+  },
+  badges: [],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+
+[90mstdout[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould clamp trust score to 0 minimum[22m[39m
+Scan Result: {
+  trust_score: [33m-20[39m,
+  verdict: {
+    label: [32m'avoid'[39m,
+    color: [32m'#EF4444'[39m,
+    icon: [32m'Γ£ò'[39m,
+    explanation: [32m'This product has significant concerns.'[39m
+  },
+  badges: [],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+Scan Result: {
+  trust_score: [33m-20[39m,
+  verdict: {
+    label: [32m'avoid'[39m,
+    color: [32m'#EF4444'[39m,
+    icon: [32m'Γ£ò'[39m,
+    explanation: [32m'This product has significant concerns.'[39m
+  },
+  badges: [],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+
+[90mstdout[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould render receipts drawer[22m[39m
+Scan Result: {
+  trust_score: [33m75[39m,
+  verdict: {
+    label: [32m'caution'[39m,
+    color: [32m'#F59E0B'[39m,
+    icon: [32m'ΓÜá'[39m,
+    explanation: [32m'This product has some concerns.'[39m
+  },
+  badges: [],
+  reasons: [],
+  correlation_id: [32m'test-123'[39m
+}
+Product Info: [90mundefined[39m
+Scan Result: {
+  trust_score: [33m75[39m,
+  verdict: {
+    label: [32m'caution'[39m,
+    color: [32m'#F59E0B'[39m,
+    icon: [32m'ΓÜá'[39m,
+    explanation: [32m'This product has some concerns.'[39m
+  },
+  badges: [],
+  reasons: [],
+  correlation_id: [32m'test-123'[39m
+}
+Product Info: [90mundefined[39m
+
+[90mstdout[2m | src/pages/__tests__/Results.spec.tsx[2m > [22m[2mResults Page[2m > [22m[2mshould show improved verdict copy for clean products[22m[39m
+Scan Result: {
+  trust_score: [33m100[39m,
+  verdict: {
+    label: [32m'allow'[39m,
+    color: [32m'#10B981'[39m,
+    icon: [32m'Γ£ô'[39m,
+    explanation: [32m'This product meets safety standards.'[39m
+  },
+  badges: [],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+Scan Result: {
+  trust_score: [33m100[39m,
+  verdict: {
+    label: [32m'allow'[39m,
+    color: [32m'#10B981'[39m,
+    icon: [32m'Γ£ô'[39m,
+    explanation: [32m'This product meets safety standards.'[39m
+  },
+  badges: [],
+  reasons: []
+}
+Product Info: [90mundefined[39m
+
+ [32mΓ£ô[39m src/pages/__tests__/Results.spec.tsx[2m > [22mResults Page[2m > [22mshould render empty state when no results
+ [32mΓ£ô[39m src/pages/__tests__/Results.spec.tsx[2m > [22mResults Page[2m > [22mshould render results when data is in sessionStorage
+ [32mΓ£ô[39m src/pages/__tests__/Results.spec.tsx[2m > [22mResults Page[2m > [22mshould render issues list when issues present
+ [32mΓ£ô[39m src/pages/__tests__/Results.spec.tsx[2m > [22mResults Page[2m > [22mshould clamp trust score to 100 maximum
+ [32mΓ£ô[39m src/pages/__tests__/Results.spec.tsx[2m > [22mResults Page[2m > [22mshould clamp trust score to 0 minimum
+ [32mΓ£ô[39m src/pages/__tests__/Results.spec.tsx[2m > [22mResults Page[2m > [22mshould render receipts drawer
+ [32mΓ£ô[39m src/pages/__tests__/Results.spec.tsx[2m > [22mResults Page[2m > [22mshould show improved verdict copy for clean products
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m7 passed[39m[22m[90m (7)[39m
+[2m   Start at [22m 21:20:46
+[2m   Duration [22m 2.78s[2m (transform 305ms, setup 155ms, collect 622ms, tests 418ms, environment 918ms, prepare 284ms)[22m
+

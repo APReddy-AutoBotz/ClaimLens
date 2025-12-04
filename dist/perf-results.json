@@ -1,0 +1,14 @@
+{
+  "rewrite.disclaimer": {
+    "transform": "rewrite.disclaimer",
+    "p50": 0.01,
+    "p95": 0.08,
+    "samples": 5
+  },
+  "redact.pii": {
+    "transform": "redact.pii",
+    "p50": 0.01,
+    "p95": 0.33,
+    "samples": 5
+  }
+}

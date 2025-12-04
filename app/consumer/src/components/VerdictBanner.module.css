@@ -1,0 +1,254 @@
+/**
+ * VerdictBanner Component Styles
+ * Kiroween-themed verdict display with premium effects
+ */
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: var(--space-6);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+/* Verdict-specific border colors and glows */
+.banner.allow {
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: var(--shadow-lg), var(--kw-glow-allow);
+}
+
+.banner.modify {
+  border-color: rgba(245, 158, 11, 0.4);
+  box-shadow: var(--shadow-lg), var(--kw-glow-ember);
+  /* Ember accent for caution - Requirements: 2.4 */
+  border-left: 3px solid var(--kw-ember-orange, #F59E0B);
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.banner.avoid {
+  border-color: rgba(239, 68, 68, 0.4);
+  box-shadow: var(--shadow-lg), var(--kw-glow-avoid);
+  /* Ember accent for avoid - Requirements: 2.4 */
+  border-left: 3px solid var(--kw-ember-orange, #F59E0B);
+  background: rgba(245, 158, 11, 0.05);
+}
+
+/* Top gradient accent */
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent 0%, currentColor 50%, transparent 100%);
+  opacity: 0.6;
+}
+
+.banner.allow::before {
+  color: var(--kw-allow);
+}
+
+.banner.modify::before {
+  color: var(--kw-modify);
+}
+
+.banner.avoid::before {
+  color: var(--kw-avoid);
+}
+
+/* Header section */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* Verdict badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  backdrop-filter: blur(10px);
+  border: 2px solid;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base);
+}
+
+.badge:hover {
+  transform: scale(1.02);
+}
+
+.icon {
+  font-size: var(--text-2xl);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  text-transform: capitalize;
+  letter-spacing: 0.02em;
+}
+
+/* Content section */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Kiroween microcopy */
+.microcopy {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-cloud);
+  margin: 0;
+  line-height: 1.4;
+  font-style: italic;
+  letter-spacing: -0.01em;
+}
+
+/* Reason text */
+.reason {
+  font-size: var(--text-lg);
+  color: rgba(248, 250, 252, 0.85);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Focus state for accessibility */
+.banner:focus-within {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .banner {
+    padding: var(--space-5);
+    gap: var(--space-3);
+  }
+  
+  .badge {
+    font-size: var(--text-lg);
+    padding: var(--space-2) var(--space-4);
+    gap: var(--space-2);
+  }
+  
+  .icon {
+    font-size: var(--text-xl);
+  }
+  
+  .microcopy {
+    font-size: var(--text-xl);
+  }
+  
+  .reason {
+    font-size: var(--text-base);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .banner,
+  .badge {
+    transition: none;
+  }
+  
+  .badge:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .banner {
+    border-width: 3px;
+  }
+  
+  .badge {
+    border-width: 3px;
+  }
+  
+  .banner.allow {
+    background-color: rgba(16, 185, 129, 0.1);
+  }
+  
+  .banner.modify {
+    background-color: rgba(245, 158, 11, 0.1);
+  }
+  
+  .banner.avoid {
+    background-color: rgba(239, 68, 68, 0.1);
+  }
+}
+
+
+/* ============================================
+   KIROWEEN VISUAL POLISH: Verdict Animations
+   ============================================ */
+
+/* Allow verdict - calm teal glow */
+.banner.allow {
+  animation: calmGlow 3s ease-in-out infinite;
+}
+
+@keyframes calmGlow {
+  0%, 100% {
+    box-shadow: var(--shadow-lg), 0 0 20px rgba(16, 185, 129, 0.2);
+  }
+  50% {
+    box-shadow: var(--shadow-lg), 0 0 30px rgba(16, 185, 129, 0.3);
+  }
+}
+
+/* Modify verdict - ember pulse */
+.banner.modify {
+  animation: emberPulse 2s ease-in-out infinite;
+}
+
+@keyframes emberPulse {
+  0%, 100% {
+    box-shadow: var(--shadow-lg), 0 0 20px rgba(245, 158, 11, 0.3);
+  }
+  50% {
+    box-shadow: var(--shadow-lg), 0 0 35px rgba(245, 158, 11, 0.5);
+  }
+}
+
+/* Avoid verdict - danger halo */
+.banner.avoid {
+  animation: dangerHalo 1.5s ease-in-out infinite;
+}
+
+@keyframes dangerHalo {
+  0%, 100% {
+    box-shadow: var(--shadow-lg), 0 0 25px rgba(239, 68, 68, 0.4);
+  }
+  50% {
+    box-shadow: var(--shadow-lg), 0 0 40px rgba(239, 68, 68, 0.6);
+  }
+}
+
+/* Disable animations for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .banner.allow,
+  .banner.modify,
+  .banner.avoid {
+    animation: none;
+  }
+}

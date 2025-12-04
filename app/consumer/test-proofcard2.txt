@@ -1,0 +1,241 @@
+﻿
+> @claimlens/consumer@0.1.0 test
+> vitest run --run src/components/__tests__/ProofCard.spec.tsx
+
+
+[7m[1m[36m RUN [39m[22m[27m [36mv1.6.1[39m [90mE:/claimlens-starter/app/consumer[39m
+
+node.exe : [90mstderr[2m | src/components/__tests__/ProofCard.spec.tsx[2m > [22m[2mProofCard Component[2m 
+> [22m[2mshould render canvas element[22m[39m
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Users\mailt\AppData\Roaming\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([90mstderr[2m...ement[22m[39m:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at HTMLCanvasElementImpl.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\generated\HTMLCanvasElement.js:131:58)
+    at generateQRCode (E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:59:28)
+    at E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:74:5
+    at commitHookEffectListMount 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+    at commitPassiveMountOnFiber 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24970:11)
+    at commitPassiveMountEffects_complete 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24930:9)
+    at commitPassiveMountEffects_begin 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24917:7)
+    at commitPassiveMountEffects 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24905:3) 
+[90mundefined[39m
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at HTMLCanvasElementImpl.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\generated\HTMLCanvasElement.js:131:58)
+    at E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:82:24
+    at commitHookEffectListMount 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+    at commitPassiveMountOnFiber 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24970:11)
+    at commitPassiveMountEffects_complete 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24930:9)
+    at commitPassiveMountEffects_begin 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24917:7)
+    at commitPassiveMountEffects 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24905:3)
+    at flushPassiveEffectsImpl 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:27078:3) 
+[90mundefined[39m
+
+[90mstderr[2m | src/components/__tests__/ProofCard.spec.tsx[2m > [22m[2mProofCard Component[2m > 
+[22m[2mshould call onGenerated callback when image is ready[22m[39m
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at HTMLCanvasElementImpl.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\generated\HTMLCanvasElement.js:131:58)
+    at generateQRCode (E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:59:28)
+    at E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:74:5
+    at commitHookEffectListMount 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+    at commitPassiveMountOnFiber 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24970:11)
+    at commitPassiveMountEffects_complete 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24930:9)
+    at commitPassiveMountEffects_begin 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24917:7)
+    at commitPassiveMountEffects 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24905:3) 
+[90mundefined[39m
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at HTMLCanvasElementImpl.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\generated\HTMLCanvasElement.js:131:58)
+    at E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:82:24
+    at commitHookEffectListMount 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+    at commitPassiveMountOnFiber 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24970:11)
+    at commitPassiveMountEffects_complete 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24930:9)
+    at commitPassiveMountEffects_begin 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24917:7)
+    at commitPassiveMountEffects 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24905:3)
+    at flushPassiveEffectsImpl 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:27078:3) 
+[90mundefined[39m
+
+[90mstderr[2m | src/components/__tests__/ProofCard.spec.tsx[2m > [22m[2mProofCard Component[2m > 
+[22m[2mshould handle all verdict types[22m[39m
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at HTMLCanvasElementImpl.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\generated\HTMLCanvasElement.js:131:58)
+    at E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:82:24
+    at commitHookEffectListMount 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+    at commitPassiveMountOnFiber 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24970:11)
+    at commitPassiveMountEffects_complete 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24930:9)
+    at commitPassiveMountEffects_begin 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24917:7)
+    at commitPassiveMountEffects 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24905:3)
+    at flushPassiveEffectsImpl 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:27078:3) 
+[90mundefined[39m
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at HTMLCanvasElementImpl.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\generated\HTMLCanvasElement.js:131:58)
+    at E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:82:24
+    at commitHookEffectListMount 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+    at commitPassiveMountOnFiber 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24970:11)
+    at commitPassiveMountEffects_complete 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24930:9)
+    at commitPassiveMountEffects_begin 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24917:7)
+    at commitPassiveMountEffects 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24905:3)
+    at flushPassiveEffectsImpl 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:27078:3) 
+[90mundefined[39m
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at HTMLCanvasElementImpl.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\generated\HTMLCanvasElement.js:131:58)
+    at E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:82:24
+    at commitHookEffectListMount 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+    at commitPassiveMountOnFiber 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24970:11)
+    at commitPassiveMountEffects_complete 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24930:9)
+    at commitPassiveMountEffects_begin 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24917:7)
+    at commitPassiveMountEffects 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24905:3)
+    at flushPassiveEffectsImpl 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:27078:3) 
+[90mundefined[39m
+
+[90mstderr[2m | src/components/__tests__/ProofCard.spec.tsx[2m > [22m[2mProofCard Component[2m > 
+[22m[2mshould handle empty reasons array[22m[39m
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at HTMLCanvasElementImpl.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\generated\HTMLCanvasElement.js:131:58)
+    at E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:82:24
+    at commitHookEffectListMount 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+    at commitPassiveMountOnFiber 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24970:11)
+    at commitPassiveMountEffects_complete 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24930:9)
+    at commitPassiveMountEffects_begin 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24917:7)
+    at commitPassiveMountEffects 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24905:3)
+    at flushPassiveEffectsImpl 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:27078:3) 
+[90mundefined[39m
+
+[90mstderr[2m | src/components/__tests__/ProofCard.spec.tsx[2m > [22m[2mProofCard Component[2m > 
+[22m[2mshould truncate long product names[22m[39m
+Error: Not implemented: HTMLCanvasElement.prototype.getContext (without installing the canvas npm package)
+    at module.exports 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at HTMLCanvasElementImpl.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\nodes\HTMLCanvasElement-impl.js:42:5)
+    at HTMLCanvasElement.getContext 
+(E:\claimlens-starter\app\consumer\node_modules\jsdom\lib\jsdom\living\generated\HTMLCanvasElement.js:131:58)
+    at E:\claimlens-starter\app\consumer\src\components\ProofCard.tsx:82:24
+    at commitHookEffectListMount 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:23189:26)
+    at commitPassiveMountOnFiber 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24970:11)
+    at commitPassiveMountEffects_complete 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24930:9)
+    at commitPassiveMountEffects_begin 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24917:7)
+    at commitPassiveMountEffects 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:24905:3)
+    at flushPassiveEffectsImpl 
+(E:\claimlens-starter\app\consumer\node_modules\react-dom\cjs\react-dom.development.js:27078:3) 
+[90mundefined[39m
+
+ [33mΓ¥»[39m src/components/__tests__/ProofCard.spec.tsx [2m ([22m[2m5 tests[22m [2m|[22m [31m1 failed[39m[2m)[22m[33m 1095[2mms[22m[39m
+[31m   [33mΓ¥»[31m src/components/__tests__/ProofCard.spec.tsx[2m > [22mProofCard Component[2m > [22mshould call onGenerated callback when image is ready[39m
+[31m     ΓåÆ expected "spy" to be called at least once[39m
+
+[31mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[1m[7m Failed Tests 1 [27m[22mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[39m
+
+[31m[1m[7m FAIL [27m[22m[39m src/components/__tests__/ProofCard.spec.tsx[2m > [22mProofCard 
+Component[2m > [22mshould call onGenerated callback when image is ready
+[31m[1mAssertionError[22m: expected "spy" to be called at least once[39m
+[36m [2mΓ¥»[22m src/components/__tests__/ProofCard.spec.tsx:[2m39:25[22m[39m
+    [90m 37| [39m
+    [90m 38| [39m    [90m// onGenerated should be called with a data URL[39m
+    [90m 39| [39m    [34mexpect[39m(onGenerated)[33m.[39m[34mtoHaveBeenCalled[39m()[33m;[39m
+    [90m   | [39m                        [31m^[39m
+    [90m 40| [39m    [35mif[39m (onGenerated[33m.[39mmock[33m.[39mcalls[33m.[39mlength [33m>[39m 
+[34m0[39m) {
+    [90m 41| [39m      [35mconst[39m dataUrl [33m=[39m 
+onGenerated[33m.[39mmock[33m.[39mcalls[[34m0[39m][[34m0[39m][33m;[39m
+
+[31m[2mΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»ΓÄ»[1/1]ΓÄ»[22m[39m
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m4 passed[39m[22m[90m (5)[39m
+[2m   Start at [22m 21:24:19
+[2m   Duration [22m 5.46s[2m (transform 224ms, setup 187ms, collect 556ms, tests 1.09s, environment 1.70s, prepare 657ms)[22m
+

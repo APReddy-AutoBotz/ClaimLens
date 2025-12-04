@@ -1,0 +1,48 @@
+{
+  "mcpServers": {
+    "ocr-label": {
+      "command": "node",
+      "args": ["mcp-server-ocr.js"],
+      "env": {
+        "PORT": "7001",
+        "LOG_LEVEL": "INFO"
+      },
+      "disabled": false,
+      "autoApprove": ["extract_text", "detect_labels"],
+      "description": "OCR and label detection for menu images and nutrition facts"
+    },
+    "unit-convert": {
+      "command": "node", 
+      "args": ["mcp-server-units.js"],
+      "env": {
+        "PORT": "7002",
+        "LOG_LEVEL": "INFO"
+      },
+      "disabled": false,
+      "autoApprove": ["convert_units", "normalize_nutrition"],
+      "description": "Unit conversion and nutrition normalization"
+    },
+    "recall-lookup": {
+      "command": "node",
+      "args": ["mcp-server-recalls.js"],
+      "env": {
+        "PORT": "7003",
+        "LOG_LEVEL": "INFO"
+      },
+      "disabled": false,
+      "autoApprove": ["check_recalls", "get_safety_info"],
+      "description": "Food safety recall and advisory lookup"
+    },
+    "alt-suggester": {
+      "command": "node",
+      "args": ["mcp-server-alternatives.js"],
+      "env": {
+        "PORT": "7004",
+        "LOG_LEVEL": "INFO"
+      },
+      "disabled": false,
+      "autoApprove": ["suggest_alternatives", "find_substitutes"],
+      "description": "Alternative ingredient and claim suggestions"
+    }
+  }
+}

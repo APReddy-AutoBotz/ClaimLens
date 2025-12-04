@@ -1,0 +1,250 @@
+name: ClaimLens CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  schema-validation:
+    name: Schema Validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        
+      - name: Validate policy schemas
+        run: node scripts/validate-schemas.mjs
+        
+      - name: Verify rule pack signatures
+        run: node scripts/verify-signatures.mjs
+
+  vitest-node:
+    name: Unit Tests (Node)
+    runs-on: ubuntu-latest
+    needs: schema-validation
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        
+      - name: Run Node tests with coverage
+        run: pnpm test:node --coverage
+        
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage/lcov.info
+          flags: node
+          
+  vitest-browser:
+    name: Unit Tests (Browser/jsdom)
+    runs-on: ubuntu-latest
+    needs: schema-validation
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        
+      - name: Run Browser tests with coverage
+        run: pnpm test:browser --coverage
+        
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3
+        with:
+          files: ./coverage/lcov.info
+          flags: browser
+
+  test-coverage:
+    name: Test Coverage Check
+    runs-on: ubuntu-latest
+    needs: [vitest-node, vitest-browser]
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        
+      - name: Check coverage threshold
+        run: node scripts/check-coverage.mjs
+        continue-on-error: true
+          
+  fixtures-and-perf:
+    name: Fixtures & Performance
+    runs-on: ubuntu-latest
+    needs: schema-validation
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        
+      - name: Run fixtures
+        run: pnpm test:fixtures
+        
+      - name: Run performance tests
+        run: pnpm test:perf
+        
+      - name: Check latency budgets
+        run: pnpm check:budgets
+
+  documentation:
+    name: Documentation Check
+    runs-on: ubuntu-latest
+    needs: schema-validation
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        
+      - name: Check transform documentation
+        run: pnpm check:docs-for-new-transforms
+
+  security:
+    name: Security Scanning (SAST)
+    runs-on: ubuntu-latest
+    needs: schema-validation
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Run npm audit
+        run: npm audit --audit-level=moderate
+        continue-on-error: true
+        
+      - name: Check for secrets in code
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          base: ${{ github.event.repository.default_branch }}
+          head: HEAD
+        continue-on-error: true
+        
+  playwright-e2e:
+    name: E2E Tests (Playwright)
+    runs-on: ubuntu-latest
+    needs: [vitest-node, vitest-browser]
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+          
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+        
+      - name: Install Playwright browsers
+        run: pnpm playwright:install
+        
+      - name: Run E2E tests
+        run: pnpm test:e2e
+        
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
+
+  ci-gates:
+    name: CI Gates Summary
+    runs-on: ubuntu-latest
+    needs: [schema-validation, vitest-node, vitest-browser, test-coverage, fixtures-and-perf, documentation, security, playwright-e2e]
+    if: always()
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Check all jobs status
+        run: |
+          echo "All CI gates completed"
+          echo "Schema Validation: ${{ needs.schema-validation.result }}"
+          echo "Node Tests: ${{ needs.vitest-node.result }}"
+          echo "Browser Tests: ${{ needs.vitest-browser.result }}"
+          echo "Coverage Check: ${{ needs.test-coverage.result }}"
+          echo "Fixtures & Perf: ${{ needs.fixtures-and-perf.result }}"
+          echo "Documentation: ${{ needs.documentation.result }}"
+          echo "Security: ${{ needs.security.result }}"
+          echo "E2E Tests: ${{ needs.playwright-e2e.result }}"
+          
+      - name: Fail if required jobs failed
+        if: |
+          needs.schema-validation.result == 'failure' ||
+          needs.vitest-node.result == 'failure' ||
+          needs.vitest-browser.result == 'failure' ||
+          needs.fixtures-and-perf.result == 'failure' ||
+          needs.documentation.result == 'failure' ||
+          needs.playwright-e2e.result == 'failure'
+        run: exit 1

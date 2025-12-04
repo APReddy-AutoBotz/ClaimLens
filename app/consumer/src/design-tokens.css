@@ -1,0 +1,214 @@
+/**
+ * ClaimLens Go Design Tokens
+ * Premium B2C Design System with Kiroween Flavor
+ */
+
+:root {
+  /* === COLORS === */
+  
+  /* Core Palette - Foundation */
+  --color-ink: #0B1220;        /* Background */
+  --color-surface: #0F1628;    /* Cards/Base */
+  --color-cloud: #F8FAFC;      /* Text */
+  
+  /* Primary */
+  --color-primary: #4F46E5;    /* Indigo */
+  --color-teal: #14B8A6;       /* Focus/Links */
+  
+  /* Status */
+  --color-green: #10B981;      /* Emerald - Success */
+  --color-amber: #F59E0B;      /* Warning */
+  --color-red: #EF4444;        /* Error */
+  
+  /* B2C Accents (use sparingly) */
+  --color-mango: #FBBF24;
+  --color-leaf: #22C55E;
+  --color-berry: #8B5CF6;
+  --color-sky: #38BDF8;
+  --color-cream: #FEF9C3;
+  
+  /* === KIROWEEN COLOR PALETTE === */
+  
+  /* Spectral Teal/Mint - Primary actions, food-safe vibes */
+  --kw-spectral-teal: #14B8A6;
+  --kw-spectral-mint: #2DD4BF;
+  
+  /* Ember Orange - Warnings, caution states */
+  --kw-ember-orange: #F59E0B;
+  --kw-ember-glow: #FBBF24;
+  
+  /* Violet Policy - Policy/admin accents */
+  --kw-violet-policy: #8B5CF6;
+  --kw-violet-light: #A78BFA;
+  
+  /* Verdict Status Colors */
+  --kw-allow: #10B981;         /* Green - safe */
+  --kw-modify: #F59E0B;        /* Amber - caution */
+  --kw-avoid: #EF4444;         /* Red - danger */
+  
+  /* === KIROWEEN GLOW EFFECTS === */
+  --kw-glow-teal: 0 0 20px rgba(20, 184, 166, 0.3);
+  --kw-glow-mint: 0 0 20px rgba(45, 212, 191, 0.3);
+  --kw-glow-ember: 0 0 20px rgba(245, 158, 11, 0.3);
+  --kw-glow-violet: 0 0 20px rgba(139, 92, 246, 0.3);
+  --kw-glow-allow: 0 0 20px rgba(16, 185, 129, 0.3);
+  --kw-glow-avoid: 0 0 20px rgba(239, 68, 68, 0.3);
+  
+  /* === KIROWEEN FOG GRADIENTS === */
+  --kw-fog-start: rgba(11, 18, 32, 0);
+  --kw-fog-end: rgba(11, 18, 32, 0.8);
+  --kw-fog-gradient: radial-gradient(ellipse at center, var(--kw-fog-start) 0%, var(--kw-fog-end) 100%);
+  --kw-fog-vignette: radial-gradient(circle at center, transparent 0%, rgba(11, 18, 32, 0.4) 100%);
+  
+  /* === KIROWEEN GRAIN TEXTURE === */
+  --kw-grain-opacity: 0.03;
+  
+  /* === GLASSMORPHISM === */
+  --glass-bg: rgba(15, 22, 40, 0.65);
+  --glass-blur: 16px;
+  --glass-border: rgba(248, 250, 252, 0.12);
+  
+  /* === SPACING === */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  
+  /* === TYPOGRAPHY === */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 1.875rem;   /* 30px */
+  --text-4xl: 2.25rem;    /* 36px */
+  --text-5xl: 3rem;       /* 48px */
+  
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  
+  /* === BORDER RADIUS === */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+  
+  /* === SHADOWS === */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.2);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.4);
+  
+  /* === TRANSITIONS === */
+  --transition-fast: 120ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+  /* === FOCUS RING === */
+  --focus-ring: 2px solid var(--color-teal);
+  --focus-offset: 2px;
+  
+  /* === Z-INDEX === */
+  --z-base: 1;
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+}
+
+/* === GLASS SURFACE UTILITY === */
+.glass-surface {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  box-shadow: 
+    0 4px 6px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(248, 250, 252, 0.05);
+}
+
+/* Accessibility fallback for reduced transparency */
+@media (prefers-reduced-transparency: reduce) {
+  .glass-surface {
+    background: var(--color-surface);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .glass-surface {
+    background: var(--color-surface);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-width: 2px;
+  }
+}
+
+/* === PREMIUM BACKGROUND FINISHING === */
+body {
+  background: var(--color-ink);
+  position: relative;
+}
+
+/* Subtle grain texture */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+/* Soft vignette */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, transparent 0%, rgba(11, 18, 32, 0.4) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Disable grain and vignette for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    display: none;
+  }
+}
+
+/* === MOTION PREFERENCES === */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

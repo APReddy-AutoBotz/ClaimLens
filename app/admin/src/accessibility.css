@@ -1,0 +1,716 @@
+/* Accessibility Enhancements for ClaimLens Admin Console */
+
+/* Visible focus indicators (≥2px) for keyboard navigation */
+*:focus-visible {
+  outline: 2px solid var(--cl-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Enhanced focus for interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[role="button"]:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--cl-accent);
+  outline-offset: 2px;
+}
+
+/* Skip to main content link for screen readers */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--cl-primary);
+  color: white;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  z-index: 9999;
+  border-radius: 0 0 var(--cl-radius-lg) 0;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Ensure sufficient contrast for text (WCAG AA ≥4.5:1) */
+.text-high-contrast {
+  color: var(--cl-cloud); /* #F8FAFC on #0B1220 = 15.8:1 */
+}
+
+.text-medium-contrast {
+  color: #C7D2FE; /* Light purple on dark = 9.2:1 */
+}
+
+/* Keyboard navigation helpers */
+[tabindex="0"]:focus-visible,
+[tabindex="-1"]:focus-visible {
+  outline: 2px solid var(--cl-accent);
+  outline-offset: 2px;
+}
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus trap for modals */
+.modal-overlay:focus-visible {
+  outline: none;
+}
+
+.modal:focus-visible {
+  outline: 2px solid var(--cl-accent);
+  outline-offset: -2px;
+}
+
+/* Keyboard navigation indicators */
+.keyboard-nav-active *:focus {
+  outline: 2px solid var(--cl-accent);
+  outline-offset: 2px;
+}
+
+/* Ensure interactive elements are keyboard accessible */
+[role="button"]:not([tabindex]) {
+  tabindex: 0;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --cl-cloud: #FFFFFF;
+    --cl-ink: #000000;
+    --cl-border: rgba(255, 255, 255, 0.5);
+  }
+  
+  .btn {
+    border-width: 2px;
+  }
+  
+  .cl-badge {
+    border-width: 2px;
+  }
+}
+
+/* Reduced motion support - WCAG 2.1 Level AAA */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Disable transform animations */
+  .btn:hover,
+  .btn-icon:hover,
+  .btn-primary:hover {
+    transform: none !important;
+  }
+  
+  /* Disable drawer and modal animations */
+  .drawer-overlay,
+  .modal-overlay,
+  .drawer {
+    animation: none !important;
+  }
+}
+
+/* Focus within for containers */
+.card:focus-within {
+  border-color: rgba(79, 70, 229, 0.6);
+}
+
+/* Ensure tooltips are keyboard accessible */
+[aria-describedby]:focus-visible + [role="tooltip"] {
+  display: block;
+}
+
+/* Table accessibility */
+table[role="table"] caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Ensure form labels are properly associated */
+label[for] {
+  cursor: pointer;
+}
+
+/* Error states with sufficient contrast */
+.error-text {
+  color: #FDB0B0; /* Light red on dark = 7.1:1 */
+}
+
+.success-text {
+  color: #9FE8C7; /* Light green on dark = 8.3:1 */
+}
+
+.warning-text {
+  color: #F9C76C; /* Light amber on dark = 8.9:1 */
+}
+
+/* Ensure disabled states are clear */
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Live region for dynamic updates */
+[aria-live="polite"],
+[aria-live="assertive"] {
+  position: relative;
+}
+
+/* Ensure links are distinguishable */
+a:not(.btn) {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+a:not(.btn):hover {
+  text-decoration-thickness: 2px;
+}
+
+/* Keyboard focus for custom controls */
+.draggable-item:focus-visible {
+  outline: 2px solid var(--cl-accent);
+  outline-offset: 2px;
+}
+
+/* Ensure sufficient target size (44x44px minimum) */
+button,
+a,
+input[type="checkbox"],
+input[type="radio"],
+[role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Exception for inline text links */
+a:not(.btn):not([role="button"]) {
+  min-height: auto;
+  min-width: auto;
+}
+
+/* Ensure form inputs have visible labels */
+input:not([aria-label]):not([aria-labelledby]):not([title]) {
+  border: 2px solid var(--cl-danger);
+}
+
+/* Focus management for modals */
+.modal-overlay[aria-modal="true"] {
+  position: fixed;
+  inset: 0;
+}
+
+/* Ensure status messages are announced */
+[role="status"],
+[role="alert"] {
+  padding: 0.75rem 1rem;
+  border-radius: var(--cl-radius-lg);
+}
+
+[role="alert"] {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #FDB0B0;
+}
+
+[role="status"] {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  color: #9FE8C7;
+}
+
+/* Additional WCAG AA Compliance Enhancements */
+
+/* Ensure all interactive elements have proper focus indicators */
+.cl-btn:focus-visible,
+.btn:focus-visible,
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.btn-ghost:focus-visible {
+  outline: var(--cl-focus-width) solid var(--cl-accent);
+  outline-offset: var(--cl-focus-offset);
+}
+
+/* Ensure checkboxes have proper focus and size */
+input[type="checkbox"] {
+  min-width: 20px;
+  min-height: 20px;
+  cursor: pointer;
+  accent-color: var(--cl-accent);
+}
+
+input[type="checkbox"]:focus-visible {
+  outline: var(--cl-focus-width) solid var(--cl-accent);
+  outline-offset: var(--cl-focus-offset);
+}
+
+/* Ensure proper contrast for all badge variants */
+.cl-badge {
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.badge-warn {
+  /* #F9C76C on rgba(245,158,11,.12) background - ensures 4.5:1 contrast */
+  color: #F9C76C;
+}
+
+.badge-danger {
+  /* #FDB0B0 on rgba(239,68,68,.12) background - ensures 4.5:1 contrast */
+  color: #FDB0B0;
+}
+
+.badge-ok {
+  /* #9FE8C7 on rgba(16,185,129,.12) background - ensures 4.5:1 contrast */
+  color: #9FE8C7;
+}
+
+/* Ensure proper spacing for touch targets in tables */
+.action-queue-table input[type="checkbox"] {
+  margin: auto;
+  display: block;
+}
+
+/* Ensure proper focus for tag chips */
+.tag-chip[aria-pressed="true"] {
+  background: var(--cl-accent);
+  color: white;
+  border-color: var(--cl-accent);
+}
+
+/* Ensure proper focus for drawer and modal close buttons */
+.drawer-header .btn-icon:focus-visible,
+.modal-header .btn-icon:focus-visible {
+  outline: var(--cl-focus-width) solid var(--cl-accent);
+  outline-offset: var(--cl-focus-offset);
+}
+
+/* Ensure proper contrast for code elements */
+.version-code,
+.route-code,
+.rule-code {
+  background: rgba(255, 255, 255, 0.08);
+  color: #9FE8C7;
+  padding: var(--cl-space-1) var(--cl-space-2);
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: var(--cl-text-sm);
+}
+
+/* Ensure proper spacing for form groups */
+.form-group {
+  margin-bottom: var(--cl-space-6);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--cl-space-2);
+  color: #C7D2FE;
+  font-weight: 600;
+  font-size: var(--cl-text-base);
+  line-height: 1.5;
+}
+
+/* Ensure error messages are clearly visible */
+.error-message {
+  color: #FDB0B0;
+  font-size: var(--cl-text-sm);
+  margin-top: var(--cl-space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--cl-space-1);
+  font-weight: 600;
+}
+
+/* Ensure character counters are readable */
+.char-count {
+  font-size: var(--cl-text-sm);
+  color: #C7D2FE;
+  margin-top: var(--cl-space-1);
+  line-height: 1.5;
+}
+
+.char-count.error {
+  color: #FDB0B0;
+  font-weight: 600;
+}
+
+/* Ensure status items have proper spacing */
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: var(--cl-space-2);
+  font-size: var(--cl-text-sm);
+  line-height: 1.5;
+}
+
+/* Ensure proper spacing for cockpit drivers */
+.cockpit-drivers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cl-space-2);
+  min-height: 2rem;
+}
+
+.driver-chip {
+  font-size: var(--cl-text-xs);
+  padding: var(--cl-space-2) var(--cl-space-3);
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+/* Ensure proper spacing for impact preview */
+.impact-preview {
+  margin-top: var(--cl-space-6);
+  padding: var(--cl-space-5);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--cl-radius-xl);
+}
+
+.impact-preview h4 {
+  margin: 0 0 var(--cl-space-4) 0;
+  color: #C7D2FE;
+  font-size: var(--cl-text-lg);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Ensure proper spacing for form actions */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--cl-space-4);
+  margin-top: var(--cl-space-8);
+  padding-top: var(--cl-space-6);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.form-actions .cl-btn,
+.form-actions .btn {
+  min-width: 120px;
+  min-height: var(--cl-touch-target);
+}
+
+/* Ensure proper spacing for empty states */
+.empty-state {
+  padding: var(--cl-space-8) var(--cl-space-6);
+  text-align: center;
+  color: #C7D2FE;
+}
+
+.empty-state p {
+  margin: var(--cl-space-2) 0;
+  line-height: 1.6;
+}
+
+.empty-state-hint {
+  font-size: var(--cl-text-sm);
+  color: rgba(199, 210, 254, 0.7);
+  line-height: 1.5;
+}
+
+/* Ensure proper spacing for degraded banner */
+.degraded-banner {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: var(--cl-radius-xl);
+  padding: var(--cl-space-4) var(--cl-space-5);
+  margin-bottom: var(--cl-space-4);
+  color: #F9C76C;
+  line-height: 1.6;
+}
+
+.degraded-banner strong {
+  display: block;
+  margin-bottom: var(--cl-space-2);
+  font-size: var(--cl-text-lg);
+}
+
+.degraded-banner ul {
+  margin: var(--cl-space-2) 0;
+  padding-left: var(--cl-space-6);
+  line-height: 1.6;
+}
+
+.degraded-banner a {
+  color: #F9C76C;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.degraded-banner a:hover {
+  color: #FCD34D;
+}
+
+/* Ensure success banner has proper styling */
+.success-banner {
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: var(--cl-radius-xl);
+  padding: var(--cl-space-4) var(--cl-space-5);
+  margin-bottom: var(--cl-space-4);
+  color: #9FE8C7;
+  display: flex;
+  align-items: center;
+  gap: var(--cl-space-2);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* Ensure proper spacing for decision cockpit */
+.decision-cockpit {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--cl-space-4);
+  margin-bottom: var(--cl-space-6);
+}
+
+/* Ensure proper spacing for action queue header */
+.action-queue-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--cl-space-4);
+}
+
+.action-queue-header h2 {
+  margin: 0;
+}
+
+/* Ensure proper spacing for header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--cl-space-4);
+  padding: var(--cl-space-4) var(--cl-space-5);
+  margin-bottom: var(--cl-space-6);
+}
+
+.header h1 {
+  margin: 0;
+}
+
+/* Ensure proper spacing utility classes */
+.mt-1 { margin-top: var(--cl-space-1); }
+.mt-2 { margin-top: var(--cl-space-2); }
+.mt-3 { margin-top: var(--cl-space-3); }
+.mt-4 { margin-top: var(--cl-space-4); }
+.mt-5 { margin-top: var(--cl-space-5); }
+.mt-6 { margin-top: var(--cl-space-6); }
+.mt-8 { margin-top: var(--cl-space-8); }
+
+/* Ensure proper focus for all interactive table elements */
+.action-queue-table button:focus-visible,
+.action-queue-table a:focus-visible {
+  outline: var(--cl-focus-width) solid var(--cl-accent);
+  outline-offset: var(--cl-focus-offset);
+}
+
+/* Ensure severity icons are properly sized */
+.severity-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  line-height: 1;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+/* Ensure item name cells have proper truncation - see components.css line 887 */
+.item-name-cell {
+  max-width: 280px;
+  min-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.5;
+}
+
+/* Ensure action buttons have proper spacing */
+.action-buttons {
+  display: flex;
+  gap: var(--cl-space-2);
+  align-items: center;
+}
+
+/* Ensure drawer has proper styling */
+.drawer-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.drawer {
+  width: 600px;
+  max-width: 90vw;
+  background: var(--cl-card);
+  border-left: 1px solid var(--cl-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--cl-space-6);
+  border-bottom: 1px solid var(--cl-border);
+}
+
+.drawer-header h3 {
+  margin: 0;
+  color: var(--cl-cloud);
+}
+
+.drawer-content {
+  flex: 1;
+  padding: var(--cl-space-6);
+  overflow-y: auto;
+  line-height: 1.6;
+}
+
+/* Ensure modal has proper styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: var(--cl-card);
+  border: 1px solid var(--cl-border);
+  border-radius: var(--cl-radius-2xl);
+  padding: var(--cl-space-8);
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--cl-space-6);
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: var(--cl-cloud);
+}
+
+.modal-content {
+  color: var(--cl-cloud);
+  line-height: 1.6;
+}
+
+/* Ensure risk indicators have proper styling */
+.risk-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--cl-space-2);
+  padding: var(--cl-space-2) var(--cl-space-4);
+  border-radius: var(--cl-radius-lg);
+  font-weight: 600;
+  font-size: var(--cl-text-sm);
+  line-height: 1.5;
+}
+
+.risk-low {
+  background: rgba(16, 185, 129, 0.12);
+  color: #9FE8C7;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+.risk-medium {
+  background: rgba(245, 158, 11, 0.12);
+  color: #F9C76C;
+  border: 1px solid rgba(245, 158, 11, 0.35);
+}
+
+.risk-high {
+  background: rgba(239, 68, 68, 0.12);
+  color: #FDB0B0;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+/* Ensure affected rules have proper styling */
+.affected-rules {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cl-space-2);
+}
+
+/* Ensure impact row has proper spacing */
+.impact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--cl-space-4);
+  margin-bottom: var(--cl-space-3);
+}
+
+.impact-label {
+  font-weight: 600;
+  color: #C7D2FE;
+  min-width: 140px;
+  font-size: var(--cl-text-sm);
+  line-height: 1.5;
+}
+
+.impact-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cl-space-3);
+}
+
+/* Ensure required indicator is visible */
+.required-indicator {
+  color: #FDB0B0;
+  font-weight: 700;
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClaimLens Go - Side Panel</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #0B1220;
+      color: #F8FAFC;
+      padding: 16px;
+      min-height: 100vh;
+    }
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #334155;
+    }
+    
+    .header h1 {
+      font-size: 20px;
+      font-weight: 600;
+      color: #F8FAFC;
+    }
+    
+    .locale-toggle {
+      display: flex;
+      gap: 8px;
+      background-color: #1E293B;
+      border-radius: 8px;
+      padding: 4px;
+    }
+    
+    .locale-btn {
+      padding: 6px 12px;
+      border: none;
+      background: none;
+      color: #94A3B8;
+      font-size: 12px;
+      font-weight: 500;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.15s;
+    }
+    
+    .locale-btn:hover {
+      background-color: #334155;
+      color: #F8FAFC;
+    }
+    
+    .locale-btn.active {
+      background-color: #4F46E5;
+      color: #FFFFFF;
+    }
+    
+    .locale-btn:focus {
+      outline: 2px solid #4F46E5;
+      outline-offset: 2px;
+    }
+    
+    .flagged-items {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .item-card {
+      background-color: #1E293B;
+      border-radius: 8px;
+      padding: 16px;
+      border-left: 4px solid transparent;
+    }
+    
+    .item-card.allergen {
+      border-left-color: #EF4444;
+    }
+    
+    .item-card.warning {
+      border-left-color: #F59E0B;
+    }
+    
+    .item-card.info {
+      border-left-color: #14B8A6;
+    }
+    
+    .item-card.ok {
+      border-left-color: #10B981;
+    }
+    
+    .item-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: #F8FAFC;
+      margin-bottom: 8px;
+    }
+    
+    .item-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .item-badge.allergen {
+      background-color: #EF4444;
+      color: #FFFFFF;
+    }
+    
+    .item-badge.warning {
+      background-color: #F59E0B;
+      color: #0B1220;
+    }
+    
+    .item-badge.info {
+      background-color: #14B8A6;
+      color: #FFFFFF;
+    }
+    
+    .item-badge.ok {
+      background-color: #10B981;
+      color: #FFFFFF;
+    }
+    
+    .item-explanation {
+      font-size: 14px;
+      color: #CBD5E1;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
+    
+    .item-source {
+      font-size: 12px;
+    }
+    
+    .item-source a {
+      color: #14B8A6;
+      text-decoration: underline;
+    }
+    
+    .item-source a:hover {
+      color: #5EEAD4;
+    }
+    
+    .item-source a:focus {
+      outline: 2px solid #4F46E5;
+      outline-offset: 2px;
+    }
+    
+    .empty-state {
+      text-align: center;
+      padding: 48px 16px;
+      color: #94A3B8;
+    }
+    
+    .empty-state-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    
+    .empty-state-text {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    
+    .close-hint {
+      position: fixed;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #1E293B;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 12px;
+      color: #94A3B8;
+    }
+    
+    .close-hint kbd {
+      background-color: #334155;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      color: #F8FAFC;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>ClaimLens Go</h1>
+    <div class="locale-toggle" role="group" aria-label="Locale selection">
+      <button class="locale-btn active" data-locale="en-IN" aria-pressed="true">🇮🇳 India</button>
+      <button class="locale-btn" data-locale="en-US" aria-pressed="false">🇺🇸 US</button>
+      <button class="locale-btn" data-locale="en-GB" aria-pressed="false">🇬🇧 UK</button>
+    </div>
+  </div>
+  
+  <div class="flagged-items" id="flaggedItems">
+    <div class="empty-state">
+      <div class="empty-state-icon">✓</div>
+      <div class="empty-state-text">No flagged items on this page</div>
+    </div>
+  </div>
+  
+  <div class="close-hint">
+    Press <kbd>ESC</kbd> to close
+  </div>
+  
+  <script src="sidepanel.js"></script>
+</body>
+</html>

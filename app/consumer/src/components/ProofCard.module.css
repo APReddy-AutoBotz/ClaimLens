@@ -1,0 +1,81 @@
+/* ProofCard Component Styles */
+
+.canvas {
+  display: none; /* Hidden by default, only used for image generation */
+  max-width: 100%;
+  height: auto;
+}
+
+/* Preview container for when showing the proof card */
+.preview {
+  background: var(--color-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.previewImage {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.previewTitle {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-cloud);
+  margin-bottom: 0.5rem;
+}
+
+.previewActions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.previewButton {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  background: var(--color-teal);
+  color: var(--color-ink);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 180ms ease;
+}
+
+.previewButton:hover {
+  background: var(--color-teal-light);
+  transform: translateY(-1px);
+}
+
+.previewButton:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+}
+
+.previewButtonSecondary {
+  background: transparent;
+  border: 1px solid var(--glass-border);
+  color: var(--color-cloud);
+}
+
+.previewButtonSecondary:hover {
+  background: rgba(248, 250, 252, 0.05);
+  border-color: var(--color-teal);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .previewButton {
+    transition-duration: 0.01ms;
+  }
+  
+  .previewButton:hover {
+    transform: none;
+  }
+}

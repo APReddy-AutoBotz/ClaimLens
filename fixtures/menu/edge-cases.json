@@ -1,0 +1,114 @@
+{
+  "restaurant": "Test Kitchen",
+  "items": [
+    {
+      "id": "item-001",
+      "name": "Superfood Power Bowl",
+      "description": "Amazing detox bowl with miracle ingredients",
+      "ingredients": ["quinoa", "kale", "peanuts", "chia seeds"],
+      "nutrition": {
+        "calories": "250 per serving",
+        "sugar": "28g per 100g",
+        "sodium": "650mg"
+      },
+      "expected_flags": ["banned_claim", "allergen", "high_sugar"]
+    },
+    {
+      "id": "item-002",
+      "name": "No Sugar Added Smoothie",
+      "description": "100% pure fruit smoothie with zero chemicals",
+      "ingredients": ["mango", "banana", "honey"],
+      "nutrition": {
+        "calories": "180",
+        "sugar": "35g per 100g"
+      },
+      "expected_flags": ["banned_claim", "misleading_sugar"]
+    },
+    {
+      "id": "item-003",
+      "name": "Sesame Crusted Salmon",
+      "description": "Fresh salmon with sesame crust. Contact chef@restaurant.com for custom orders",
+      "ingredients": ["salmon", "sesame seeds", "soy sauce"],
+      "nutrition": {
+        "calories": "320 per 100g",
+        "protein": "28g"
+      },
+      "expected_flags": ["allergen", "pii"]
+    },
+    {
+      "id": "item-004",
+      "name": "Lactose-Free Pasta",
+      "description": "Creamy pasta made with lactose-free milk",
+      "ingredients": ["pasta", "lactose-free milk", "parmesan"],
+      "nutrition": {
+        "calories": "280 per 100g"
+      },
+      "expected_flags": ["allergen_warning"]
+    },
+    {
+      "id": "item-005",
+      "name": "Immunity Booster Juice",
+      "description": "Doctor recommended juice for healing. Call +91 9876543210 for delivery to pincode 400001",
+      "ingredients": ["orange", "ginger", "turmeric"],
+      "nutrition": {
+        "calories": "120 per 100g",
+        "vitamin_c": "80mg"
+      },
+      "expected_flags": ["banned_claim", "pii"]
+    },
+    {
+      "id": "item-006",
+      "name": "Classic Margherita Pizza",
+      "description": "Traditional pizza with fresh mozzarella and basil",
+      "ingredients": ["flour", "tomato", "mozzarella", "basil"],
+      "nutrition": {
+        "calories": "266 per 100g",
+        "sodium": "550mg"
+      },
+      "expected_flags": ["allergen"]
+    },
+    {
+      "id": "item-007",
+      "name": "Grilled Chicken Salad",
+      "description": "Fresh grilled chicken with mixed greens",
+      "ingredients": ["chicken breast", "lettuce", "tomato", "cucumber"],
+      "nutrition": {
+        "calories": "150 per 100g",
+        "protein": "22g"
+      },
+      "expected_flags": []
+    },
+    {
+      "id": "item-008",
+      "name": "Fat-Burning Green Tea",
+      "description": "Clinically proven anti-aging tea with guaranteed results",
+      "ingredients": ["green tea", "lemon", "honey"],
+      "nutrition": {
+        "calories": "25 per 100g"
+      },
+      "expected_flags": ["banned_claim"]
+    },
+    {
+      "id": "item-009",
+      "name": "Peanut Butter Toast",
+      "description": "Whole grain toast with natural peanut butter",
+      "ingredients": ["whole wheat bread", "peanut butter"],
+      "nutrition": {
+        "calories": "310 per 100g",
+        "protein": "12g"
+      },
+      "expected_flags": ["allergen"]
+    },
+    {
+      "id": "item-010",
+      "name": "Fresh Fruit Salad",
+      "description": "Seasonal fruits with mint",
+      "ingredients": ["watermelon", "pineapple", "mint", "lime"],
+      "nutrition": {
+        "calories": "60 per 100g",
+        "sugar": "12g per 100g"
+      },
+      "expected_flags": []
+    }
+  ]
+}

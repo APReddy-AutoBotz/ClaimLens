@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ClaimLens Go - Privacy Consent</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #F8FAFC;
+      color: #0B1220;
+      padding: 48px 24px;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .container {
+      max-width: 600px;
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      padding: 48px;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+    }
+    
+    .logo {
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #0B1220;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    
+    .subtitle {
+      font-size: 16px;
+      color: #64748B;
+      text-align: center;
+      margin-bottom: 32px;
+      line-height: 1.5;
+    }
+    
+    .consent-text {
+      font-size: 14px;
+      color: #334155;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    
+    .consent-text h2 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #0B1220;
+      margin-top: 24px;
+      margin-bottom: 12px;
+    }
+    
+    .consent-text ul {
+      margin-left: 24px;
+      margin-bottom: 16px;
+    }
+    
+    .consent-text li {
+      margin-bottom: 8px;
+    }
+    
+    .checkbox-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 24px;
+      padding: 16px;
+      background-color: #F1F5F9;
+      border-radius: 8px;
+    }
+    
+    .checkbox-container input[type="checkbox"] {
+      margin-top: 4px;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+    }
+    
+    .checkbox-container input[type="checkbox"]:focus {
+      outline: 2px solid #4F46E5;
+      outline-offset: 2px;
+    }
+    
+    .checkbox-container label {
+      font-size: 14px;
+      color: #0B1220;
+      cursor: pointer;
+      line-height: 1.5;
+    }
+    
+    .button-group {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+    }
+    
+    button {
+      padding: 12px 32px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    
+    button:focus {
+      outline: 2px solid #4F46E5;
+      outline-offset: 2px;
+    }
+    
+    .btn-primary {
+      background-color: #4F46E5;
+      color: #FFFFFF;
+    }
+    
+    .btn-primary:hover:not(:disabled) {
+      background-color: #4338CA;
+    }
+    
+    .btn-primary:disabled {
+      background-color: #CBD5E1;
+      cursor: not-allowed;
+    }
+    
+    .btn-secondary {
+      background-color: #E2E8F0;
+      color: #334155;
+    }
+    
+    .btn-secondary:hover {
+      background-color: #CBD5E1;
+    }
+    
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 24px;
+    }
+    
+    .success-message.show {
+      display: block;
+    }
+    
+    .success-icon {
+      font-size: 64px;
+      margin-bottom: 16px;
+    }
+    
+    .success-text {
+      font-size: 18px;
+      color: #10B981;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .success-subtext {
+      font-size: 14px;
+      color: #64748B;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="consentForm">
+      <div class="logo">🛡️</div>
+      <h1>Welcome to ClaimLens Go</h1>
+      <p class="subtitle">Real-time food content validation and allergen warnings</p>
+      
+      <div class="consent-text">
+        <h2>Privacy & Permissions</h2>
+        <p>ClaimLens Go helps you make informed food choices by analyzing menu content on delivery websites. To provide this service, we need your consent for the following:</p>
+        
+        <ul>
+          <li><strong>Content Analysis:</strong> We scan menu items on websites you visit to detect allergens and validate claims</li>
+          <li><strong>Domain Control:</strong> You choose which websites ClaimLens Go operates on through an allowlist</li>
+          <li><strong>Local Storage:</strong> Your preferences and allowlisted domains are stored locally on your device</li>
+          <li><strong>No Data Collection:</strong> We do not collect, store, or share your browsing data</li>
+        </ul>
+        
+        <h2>How It Works</h2>
+        <p>After giving consent, you can add specific food delivery websites to your allowlist. ClaimLens Go will only scan and analyze content on those approved sites.</p>
+      </div>
+      
+      <div class="checkbox-container">
+        <input type="checkbox" id="consentCheckbox" aria-label="I understand and consent">
+        <label for="consentCheckbox">
+          I understand how ClaimLens Go works and consent to content analysis on websites I choose to allowlist
+        </label>
+      </div>
+      
+      <div class="button-group">
+        <button class="btn-secondary" id="declineBtn">Decline</button>
+        <button class="btn-primary" id="acceptBtn" disabled>Accept & Continue</button>
+      </div>
+    </div>
+    
+    <div class="success-message" id="successMessage">
+      <div class="success-icon">✓</div>
+      <div class="success-text">Consent Saved</div>
+      <div class="success-subtext">You can now use ClaimLens Go. Visit a food delivery website to get started.</div>
+    </div>
+  </div>
+  
+  <script src="consent.js"></script>
+</body>
+</html>

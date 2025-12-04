@@ -1,0 +1,56 @@
+
+:root{
+  --cl-ink:#0B1220;
+  --cl-cloud:#F8FAFC;
+  --cl-primary:#4F46E5;
+  --cl-accent:#14B8A6;
+  --cl-warn:#F59E0B;
+  --cl-danger:#EF4444;
+  --cl-success:#10B981;
+  --cl-card:#0F1628;
+  --cl-border:rgba(79,70,229,.35);
+  --cl-shadow:0 8px 24px rgba(0,0,0,.08);
+  --cl-font-ui:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  --cl-font-head:DM Sans, var(--cl-font-ui);
+  --cl-radius-2xl:16px;
+  --cl-radius-xl:12px;
+  --cl-radius-lg:10px;
+  --cl-speed-fast:120ms;
+  --cl-speed-med:180ms;
+}
+html { color: var(--cl-cloud); background: var(--cl-ink); font-family: var(--cl-font-ui); }
+h1,h2,h3 { font-family: var(--cl-font-head); }
+a { color: var(--cl-accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+:focus-visible { outline: 2px solid var(--cl-accent); outline-offset: 2px; }
+[role="button"], button { cursor: pointer; }
+.cl-card {
+  background: var(--cl-card);
+  border: 1px solid var(--cl-border);
+  border-radius: var(--cl-radius-2xl);
+  box-shadow: var(--cl-shadow);
+}
+.cl-badge {
+  display:inline-flex; align-items:center; gap:.4rem;
+  border-radius:999px; padding:.25rem .6rem; font-size:.85rem;
+  border:1px solid rgba(255,255,255,.08);
+}
+.badge-warn { background: rgba(245,158,11,.12); color:#F9C76C; border-color: rgba(245,158,11,.35); }
+.badge-danger { background: rgba(239,68,68,.12); color:#FDB0B0; border-color: rgba(239,68,68,.35); }
+.badge-ok { background: rgba(16,185,129,.12); color:#9FE8C7; border-color: rgba(16,185,129,.35); }
+.btn {
+  display:inline-flex; align-items:center; gap:.5rem; padding:.6rem 1rem;
+  border-radius: var(--cl-radius-xl); border:1px solid transparent;
+  transition: transform var(--cl-speed-fast) ease, border-color var(--cl-speed-fast) ease;
+  font-weight:600;
+}
+.btn-primary { background: var(--cl-primary); color: white; }
+.btn-primary:hover { transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--cl-cloud); border-color: rgba(255,255,255,.12); }
+.btn-ghost:hover { border-color: rgba(255,255,255,.35); }
+.card { padding: 1rem; border-radius: var(--cl-radius-2xl); border:1px solid rgba(79,70,229,.35); background: var(--cl-card); }
+.table { width:100%; border-collapse: collapse; font-size:.95rem; }
+.table th, .table td { padding:.6rem .75rem; border-bottom:1px solid rgba(255,255,255,.08); }
+.table th { text-align:left; color:#C7D2FE; }
+.glow { box-shadow: 0 0 24px rgba(79,70,229,.25); }
+.glitch-underline:hover { text-shadow: 0 0 1px #fff; }

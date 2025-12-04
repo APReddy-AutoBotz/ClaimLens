@@ -1,0 +1,68 @@
+.container {
+  padding: var(--space-4);
+  animation: fadeIn 0.3s ease-in;
+}
+
+.header {
+  margin-bottom: var(--space-6);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.skeletonLine,
+.skeletonBox {
+  background: linear-gradient(
+    90deg,
+    var(--surface-2) 0%,
+    var(--surface-3) 50%,
+    var(--surface-2) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-md);
+}
+
+.skeletonLine {
+  height: 1rem;
+  margin-bottom: var(--space-2);
+}
+
+.skeletonBox {
+  height: 12rem;
+  width: 100%;
+  margin-bottom: var(--space-4);
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

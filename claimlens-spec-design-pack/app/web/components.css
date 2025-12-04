@@ -1,0 +1,12 @@
+
+.header { display:flex; align-items:center; justify-content:space-between; gap:1rem; padding:1rem 1.25rem; }
+.kpis { display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap:1rem; }
+.kpi { padding:1rem; border-radius:16px; border:1px solid rgba(79,70,229,.35); background: #0F1628; }
+.kpi h4 { margin:0 0 .4rem 0; color:#C7D2FE; }
+.kpi .num { font-size:1.6rem; font-weight:700; }
+.grid-2 { display:grid; grid-template-columns: 1.2fr .8fr; gap:1rem; }
+.section { padding:1rem; border:1px solid rgba(255,255,255,.08); border-radius:12px; }
+.badges { display:flex; gap:.5rem; flex-wrap:wrap; }
+.flex { display:flex; gap: .75rem; align-items:center; }
+.right { margin-left:auto; }
+.mt-1{margin-top:.25rem}.mt-2{margin-top:.5rem}.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}

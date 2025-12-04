@@ -1,0 +1,57 @@
+.container {
+  position: relative;
+  display: inline-flex;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(248, 250, 252, 0.15);
+  border-radius: var(--radius-full);
+  padding: 4px;
+  gap: 4px;
+}
+
+.tab {
+  position: relative;
+  z-index: 2;
+  padding: var(--space-2) var(--space-6);
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  color: rgba(248, 250, 252, 0.6);
+  cursor: pointer;
+  transition: color var(--transition-base);
+  min-width: 100px;
+  text-align: center;
+}
+
+.tab:hover {
+  color: rgba(248, 250, 252, 0.9);
+}
+
+.tab.active {
+  color: var(--color-ink);
+}
+
+.tab:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+.indicator {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 4px);
+  height: calc(100% - 8px);
+  background: linear-gradient(135deg, var(--color-teal) 0%, var(--color-green) 100%);
+  border-radius: var(--radius-full);
+  transition: transform var(--transition-base);
+  z-index: 1;
+  box-shadow: 0 2px 8px rgba(20, 184, 166, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .indicator {
+    transition: none;
+  }
+}

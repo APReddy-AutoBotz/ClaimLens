@@ -1,0 +1,114 @@
+/**
+ * VerdictBadge Component Styles
+ * Color-coded badge for trust score verdict
+ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--space-2);
+  font-size: var(--text-base);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-tight);
+  transition: transform 0.2s ease;
+}
+
+.badge:focus-visible {
+  outline: 2px solid var(--color-teal);
+  outline-offset: 2px;
+}
+
+.icon {
+  font-size: var(--text-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.label {
+  text-transform: capitalize;
+}
+
+/* Allow verdict - green */
+.allow {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: var(--color-emerald);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+
+/* Caution verdict - amber */
+.caution {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: var(--color-amber);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+/* Avoid verdict - red */
+.avoid {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: var(--color-red);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* Hover effect for interactive badges */
+.badge:hover {
+  transform: scale(1.02);
+}
+
+/* Mobile optimization */
+@media (max-width: 640px) {
+  .badge {
+    font-size: var(--text-sm);
+    padding: var(--space-1) var(--space-3);
+  }
+  
+  .icon {
+    font-size: var(--text-base);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .allow {
+    background-color: rgba(16, 185, 129, 0.25);
+    border-width: 2px;
+  }
+  
+  .caution {
+    background-color: rgba(245, 158, 11, 0.25);
+    border-width: 2px;
+  }
+  
+  .avoid {
+    background-color: rgba(239, 68, 68, 0.25);
+    border-width: 2px;
+  }
+}
+
+/* Compact mode for list views */
+.compact {
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--text-sm);
+  gap: var(--space-1);
+}
+
+.compact .icon {
+  font-size: var(--text-base);
+}
+
+.compact .label {
+  font-size: var(--text-xs);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .badge {
+    transition: none;
+  }
+  
+  .badge:hover {
+    transform: none;
+  }
+}

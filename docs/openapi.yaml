@@ -1,0 +1,484 @@
+openapi: 3.1.0
+info:
+  title: ClaimLens API
+  version: 1.0.0
+  description: |
+    ClaimLens food content validation and compliance API.
+    Supports MenuShield (B2B) and ClaimLens Go (B2C) products.
+  contact:
+    name: ClaimLens Support
+    email: support@claimlens.com
+
+servers:
+  - url: https://api.claimlens.com/v1
+    description: Production
+  - url: https://staging-api.claimlens.com/v1
+    description: Staging
+
+security:
+  - BearerAuth: []
+
+paths:
+  /menu/feed:
+    post:
+      summary: Analyze menu items (MenuShield B2B)
+      description: |
+        Process single or multiple menu items through the menushield_in profile.
+        Supports idempotency via Idempotency-Key header (24-hour deduplication window).
+      operationId: analyzeMenuFeed
+      tags:
+        - MenuShield
+      parameters:
+        - $ref: '#/components/parameters/CorrelationId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/MenuItem'
+                - type: object
+                  properties:
+                    items:
+                      type: array
+                      items:
+                        $ref: '#/components/schemas/MenuItem'
+                    locale:
+                      type: string
+                      enum: [en-IN, en-US, en-GB]
+                      default: en-IN
+            examples:
+              singleItem:
+                summary: Single item
+                value:
+                  id: item-001
+                  name: Superfood Power Bowl
+                  description: Amazing detox bowl
+                  ingredients: [quinoa, kale, peanuts]
+                  nutrition:
+                    calories: 250 per serving
+                    sugar_g: 28
+                    sodium_mg: 650
+              multipleItems:
+                summary: Multiple items
+                value:
+                  items:
+                    - id: item-001
+                      name: Superfood Power Bowl
+                      ingredients: [quinoa, kale, peanuts]
+                    - id: item-002
+                      name: Fresh Fruit Salad
+                      ingredients: [watermelon, pineapple, mint]
+                  locale: en-IN
+      responses:
+        '200':
+          description: Analysis complete
+          headers:
+            X-Correlation-ID:
+              $ref: '#/components/headers/CorrelationId'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  verdicts:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Verdict'
+                  correlation_id:
+                    type: string
+                    format: uuid
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+        '500':
+          $ref: '#/components/responses/InternalError'
+
+  /menu/validate:
+    post:
+      summary: Quick validation for single item
+      description: Faster validation with subset of transforms
+      operationId: validateMenuItem
+      tags:
+        - MenuShield
+      parameters:
+        - $ref: '#/components/parameters/CorrelationId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [item]
+              properties:
+                item:
+                  $ref: '#/components/schemas/MenuItem'
+                locale:
+                  type: string
+                  enum: [en-IN, en-US, en-GB]
+                  default: en-IN
+      responses:
+        '200':
+          description: Validation complete
+          headers:
+            X-Correlation-ID:
+              $ref: '#/components/headers/CorrelationId'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Verdict'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+
+  /export/menu.ndjson:
+    get:
+      summary: Export cleaned menu items
+      description: |
+        Returns cleaned menu items in newline-delimited JSON format.
+        Scoped to requesting tenant. Supports cursor-based pagination.
+      operationId: exportMenu
+      tags:
+        - Export
+      parameters:
+        - $ref: '#/components/parameters/CorrelationId'
+        - name: cursor
+          in: query
+          description: Pagination cursor from previous response
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: Items per page
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 1000
+            default: 100
+      responses:
+        '200':
+          description: Export data
+          headers:
+            X-Correlation-ID:
+              $ref: '#/components/headers/CorrelationId'
+            X-Next-Cursor:
+              description: Cursor for next page
+              schema:
+                type: string
+            X-Total-Count:
+              description: Total items available
+              schema:
+                type: integer
+          content:
+            application/x-ndjson:
+              schema:
+                type: string
+                description: Newline-delimited JSON objects
+              example: |
+                {"id":"item-001","name":"Nutrient-rich Power Bowl (...)","ingredients":["quinoa","kale"]}
+                {"id":"item-002","name":"Fresh Fruit Salad","ingredients":["watermelon","pineapple"]}
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+        '429':
+          $ref: '#/components/responses/TooManyRequests'
+
+  /web/ingest:
+    post:
+      summary: Analyze web content (ClaimLens Go B2C)
+      description: Process content for browser overlay badges
+      operationId: ingestWebContent
+      tags:
+        - ClaimLens Go
+      parameters:
+        - $ref: '#/components/parameters/CorrelationId'
+        - $ref: '#/components/parameters/IdempotencyKey'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [items]
+              properties:
+                items:
+                  type: array
+                  items:
+                    type: object
+                    required: [id, name]
+                    properties:
+                      id:
+                        type: string
+                      name:
+                        type: string
+                      description:
+                        type: string
+                      dom_selector:
+                        type: string
+                locale:
+                  type: string
+                  enum: [en-IN, en-US, en-GB]
+                  default: en-IN
+      responses:
+        '200':
+          description: Badges generated
+          headers:
+            X-Correlation-ID:
+              $ref: '#/components/headers/CorrelationId'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  badges:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Badge'
+                  correlation_id:
+                    type: string
+                    format: uuid
+        '400':
+          $ref: '#/components/responses/BadRequest'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: API Key
+
+  parameters:
+    CorrelationId:
+      name: X-Correlation-ID
+      in: header
+      required: true
+      description: Unique request identifier for tracing
+      schema:
+        type: string
+        format: uuid
+    
+    IdempotencyKey:
+      name: Idempotency-Key
+      in: header
+      required: false
+      description: Idempotency key for deduplication (24-hour window)
+      schema:
+        type: string
+        maxLength: 255
+
+  headers:
+    CorrelationId:
+      description: Echoed correlation ID from request
+      schema:
+        type: string
+        format: uuid
+
+  schemas:
+    MenuItem:
+      type: object
+      required: [id, name]
+      properties:
+        id:
+          type: string
+          description: Unique item identifier
+        name:
+          type: string
+          description: Item name
+        description:
+          type: string
+          description: Item description
+        ingredients:
+          oneOf:
+            - type: string
+              description: Comma-separated ingredients (backward compatible)
+            - type: array
+              items:
+                type: string
+              description: Array of ingredients (preferred)
+        nutrition:
+          type: object
+          properties:
+            calories:
+              oneOf:
+                - type: string
+                - type: number
+            sugar_g:
+              type: number
+            sodium_mg:
+              type: number
+          additionalProperties: true
+        metadata:
+          type: object
+          additionalProperties: true
+
+    Verdict:
+      type: object
+      required: [verdict, reasons]
+      properties:
+        item_id:
+          type: string
+        verdict:
+          type: string
+          enum: [allow, modify, block]
+        changes:
+          type: array
+          items:
+            $ref: '#/components/schemas/Change'
+        reasons:
+          type: array
+          items:
+            $ref: '#/components/schemas/Reason'
+        audit_id:
+          type: string
+        correlation_id:
+          type: string
+          format: uuid
+
+    Change:
+      type: object
+      required: [field, before, after]
+      properties:
+        field:
+          type: string
+        before:
+          type: string
+        after:
+          type: string
+
+    Reason:
+      type: object
+      required: [transform, why]
+      properties:
+        transform:
+          type: string
+        why:
+          type: string
+        source:
+          type: string
+          format: uri
+
+    Badge:
+      type: object
+      required: [item_id, kind, label]
+      properties:
+        item_id:
+          type: string
+        kind:
+          type: string
+          enum: [allergen, claim_warning, risk, ok]
+        label:
+          type: string
+        explanation:
+          type: string
+        source:
+          type: string
+          format: uri
+
+    Error:
+      type: object
+      required: [error, correlation_id]
+      properties:
+        error:
+          type: object
+          required: [code, message]
+          properties:
+            code:
+              type: string
+              description: Machine-readable error code
+              enum:
+                - INVALID_SCHEMA
+                - INVALID_API_KEY
+                - INSUFFICIENT_PERMISSIONS
+                - RATE_LIMIT_EXCEEDED
+                - INTERNAL_ERROR
+            message:
+              type: string
+              description: Human-readable error message
+            details:
+              type: object
+              additionalProperties: true
+        correlation_id:
+          type: string
+          format: uuid
+        retry_after:
+          type: integer
+          description: Seconds to wait before retry (for 429 errors)
+
+  responses:
+    BadRequest:
+      description: Invalid request
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            error:
+              code: INVALID_SCHEMA
+              message: Request body does not match MenuItem schema
+              details:
+                field: nutrition.calories
+                expected: string or number
+                received: boolean
+            correlation_id: 550e8400-e29b-41d4-a716-446655440000
+
+    Unauthorized:
+      description: Authentication failed
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            error:
+              code: INVALID_API_KEY
+              message: API key is missing or invalid
+            correlation_id: 550e8400-e29b-41d4-a716-446655440001
+
+    TooManyRequests:
+      description: Rate limit exceeded
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+        Retry-After:
+          description: Seconds to wait before retry
+          schema:
+            type: integer
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            error:
+              code: RATE_LIMIT_EXCEEDED
+              message: Rate limit of 100 requests per minute exceeded
+            correlation_id: 550e8400-e29b-41d4-a716-446655440002
+            retry_after: 42
+
+    InternalError:
+      description: Internal server error
+      headers:
+        X-Correlation-ID:
+          $ref: '#/components/headers/CorrelationId'
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/Error'
+          example:
+            error:
+              code: INTERNAL_ERROR
+              message: An unexpected error occurred
+            correlation_id: 550e8400-e29b-41d4-a716-446655440003
