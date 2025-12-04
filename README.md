@@ -15,13 +15,13 @@
 
 ## ⚡ 3-Minute Demo Flow
 
-**For judges — try the live app or run locally:**
+**Try the live app or run locally:**
 
 ### Option A: Live Demo (Recommended)
 1. Visit [https://claimlens.netlify.app](https://claimlens.netlify.app)
 2. Click "Try Demo" for a quick sample, or paste text below and scan
 
-**🎯 What judges should look for:**
+**🎯 What You should look for:**
 - Scan the AVOID sample → see Trust Score breakdown → tap "Why this score?"
 - Go to Settings → toggle allergens → scan again → see personalized warnings
 - Check History → see saved scans with search/filter
