@@ -13,6 +13,7 @@ import { lookupBarcode, ProductData } from '../utils/open-food-facts';
 import { queueScan } from '../utils/background-sync';
 import { extractTextFromImage, validateImageFile } from '../utils/ocr';
 import { requestCache } from '../utils/request-cache';
+import { buildApiUrl, isInDemoMode } from '../utils/api-config';
 import type { ProductIdentity } from '../types';
 import { generateDisplayName } from '../lib/displayName';
 import styles from './ScanHub.module.css';
@@ -312,23 +313,99 @@ function ScanHub() {
       // Brief extraction phase
       await new Promise(resolve => setTimeout(resolve, 300));
 
-      // Call the consumer scan API with caching
-      const result: any = await requestCache.fetch(
-        '/v1/consumer/scan',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
+      // In demo mode, use local analysis instead of API
+      let result: any;
+      
+      if (isInDemoMode()) {
+        console.log('[Demo Mode] Using local analysis - no backend available');
+        // Perform local analysis using transforms
+        const { detectWeaselWords } = await import('../../../../packages/transforms/detect.weasel_words');
+        const weaselResult = detectWeaselWords(inputData);
+        
+        // Check for banned claims patterns
+        const bannedPatterns = [
+          /miracle|superfood|detox|cleanse|cure|heal|treat|prevent/gi,
+          /clinically proven|doctor recommended|lab tested/gi,
+          /lose.*\d+.*pounds|burn.*fat|melt.*fat/gi,
+          /boost.*immun|prevent.*cold|prevent.*flu/gi,
+        ];
+        
+        const bannedClaims: string[] = [];
+        for (const pattern of bannedPatterns) {
+          const matches = inputData.match(pattern);
+          if (matches) {
+            bannedClaims.push(...matches);
+          }
+        }
+        
+        // Calculate trust score locally
+        const { calculateTrustScore: calcScore } = await import('../../../../packages/core/trust-score');
+        const scoreResult = calcScore({
+          bannedClaimsCount: bannedClaims.length,
+          hasRecall: false,
+          userAllergensCount: 0,
+          weaselWordDensity: weaselResult.density,
+        });
+        
+        // Determine verdict
+        let verdict: { label: 'allow' | 'caution' | 'avoid'; color: string; icon: string; explanation: string };
+        if (scoreResult.score >= 80) {
+          verdict = { label: 'allow', color: '#10B981', icon: '✓', explanation: 'No policy violations found in checks we ran.' };
+        } else if (scoreResult.score >= 50) {
+          verdict = { label: 'caution', color: '#F59E0B', icon: '⚠️', explanation: 'Some concerns detected. Review the issues below.' };
+        } else {
+          verdict = { label: 'avoid', color: '#EF4444', icon: '✕', explanation: 'Multiple policy violations detected.' };
+        }
+        
+        // Build badges
+        const badges: Array<{ kind: 'danger' | 'warn' | 'info'; label: string; explanation: string; source?: string }> = [];
+        if (bannedClaims.length > 0) {
+          badges.push({
+            kind: 'danger',
+            label: 'Banned Claims',
+            explanation: `Found ${bannedClaims.length} prohibited claim(s): ${bannedClaims.slice(0, 3).join(', ')}`,
+            source: 'https://fssai.gov.in/cms/food-safety-and-standards-regulations.php',
+          });
+        }
+        if (weaselResult.density > 0.05) {
+          badges.push({
+            kind: 'warn',
+            label: 'Weasel Words',
+            explanation: `Contains vague marketing language (${Math.round(weaselResult.density * 100)}% density)`,
+          });
+        }
+        
+        result = {
+          trust_score: scoreResult.score,
+          verdict,
+          badges,
+          reasons: [],
+          suggestions: [],
+          correlation_id: `demo_${Date.now()}`,
+          product_info: {
+            product_name: 'Scanned Product',
+            claims: bannedClaims,
           },
-          body: JSON.stringify({
-            input_type: selectedMethod,
-            input_data: inputData,
-            locale: 'en-US',
-            allergen_profile: allergenProfile.length > 0 ? allergenProfile : undefined,
-          }),
-        },
-        2 * 60 * 1000 // Cache for 2 minutes
-      );
+        };
+      } else {
+        // Call the consumer scan API with caching
+        result = await requestCache.fetch(
+          buildApiUrl('/v1/consumer/scan'),
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              input_type: selectedMethod,
+              input_data: inputData,
+              locale: 'en-US',
+              allergen_profile: allergenProfile.length > 0 ? allergenProfile : undefined,
+            }),
+          },
+          2 * 60 * 1000 // Cache for 2 minutes
+        );
+      }
 
       // Generate spectral scan steps from result
       const steps = generateScanSteps(selectedMethod, result);

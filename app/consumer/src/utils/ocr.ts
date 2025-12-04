@@ -3,6 +3,8 @@
  * Uses MCP ocr.label service for text extraction from images
  */
 
+import { buildApiUrl, isInDemoMode } from './api-config';
+
 export interface OCRResult {
   text: string;
   confidence?: number;
@@ -66,8 +68,17 @@ export async function extractTextFromImage(imageData: string): Promise<OCRResult
     // Resize image first
     const resizedImage = await resizeImage(imageData);
     
+    // In demo mode, return mock OCR result
+    if (isInDemoMode()) {
+      console.log('[Demo Mode] OCR - returning mock extracted text');
+      return {
+        text: 'Demo Mode: OCR not available. Please enter text manually or run locally.',
+        confidence: 0.5
+      };
+    }
+    
     // Call OCR API endpoint
-    const response = await fetch('/v1/consumer/ocr', {
+    const response = await fetch(buildApiUrl('/v1/consumer/ocr'), {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

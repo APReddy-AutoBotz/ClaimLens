@@ -3,6 +3,8 @@
  * Queues scans when offline and syncs when connection is restored
  */
 
+import { buildApiUrl, isInDemoMode } from './api-config';
+
 export interface QueuedScan {
   id: string;
   timestamp: number;
@@ -115,8 +117,15 @@ export async function processQueue(): Promise<void> {
     try {
       updateScanStatus(scan.id, 'syncing');
       
+      // In demo mode, skip API calls
+      if (isInDemoMode()) {
+        console.log('[Demo Mode] Background sync skipped - no backend available');
+        updateScanStatus(scan.id, 'failed', 'Demo mode - no backend');
+        continue;
+      }
+      
       // Call the scan API
-      const response = await fetch('/v1/consumer/scan', {
+      const response = await fetch(buildApiUrl('/v1/consumer/scan'), {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
