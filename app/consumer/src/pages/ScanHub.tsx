@@ -375,6 +375,19 @@ function ScanHub() {
           });
         }
         
+        // Extract product name from input for demo mode
+        const extractedProductName = (() => {
+          if (selectedMethod === 'text' && textInput) {
+            const firstLine = textInput.split('\n').map(l => l.trim()).filter(Boolean)[0];
+            return firstLine && firstLine.length <= 50 ? firstLine : (firstLine?.substring(0, 47) + '...');
+          }
+          if (selectedMethod === 'screenshot' && extractedText) {
+            const firstLine = extractedText.split('\n').map(l => l.trim()).filter(Boolean)[0];
+            return firstLine && firstLine.length <= 50 ? firstLine : (firstLine?.substring(0, 47) + '...');
+          }
+          return undefined;
+        })();
+
         result = {
           trust_score: scoreResult.score,
           verdict,
@@ -383,7 +396,7 @@ function ScanHub() {
           suggestions: [],
           correlation_id: `demo_${Date.now()}`,
           product_info: {
-            product_name: 'Scanned Product',
+            product_name: extractedProductName,
             claims: bannedClaims,
           },
         };
