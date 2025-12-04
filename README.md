@@ -2,6 +2,10 @@
 
 **ClaimLens** is a food label claim verification system with proof-first design.
 
+## 🌐 Live Demo
+
+**Try it now:** [https://claimlens.netlify.app](https://claimlens.netlify.app)
+
 ## SKUs
 - **ClaimLens MenuShield** (B2B pre-publish gate for cloud kitchens/marketplaces)
 - **ClaimLens Go** (B2C mobile-first PWA, installable)
@@ -11,7 +15,13 @@
 
 ## ⚡ 3-Minute Demo Flow
 
-**For judges — follow this sequence:**
+**For judges — try the live app or run locally:**
+
+### Option A: Live Demo (Recommended)
+1. Visit [https://claimlens.netlify.app](https://claimlens.netlify.app)
+2. Click "Try Demo" for a quick sample, or paste text below and scan
+
+### Option B: Local Development
 
 | Step | Action | What to Notice |
 |------|--------|----------------|
@@ -26,10 +36,11 @@
 | 7 | See verdict: **AVOID** | Trust score, issues list, "Why" explanations |
 | 8 | Tap "Show Receipts" | Proof drawer with evidence for each flag |
 
-**Key differentiators to highlight:**
+**Key differentiators:**
 - Every decision has receipts (audit trail)
 - MCP degraded mode keeps system running if services fail
 - No account required, privacy-first
+- Installable PWA with offline support
 
 ---
 
@@ -73,16 +84,22 @@ pnpm dev                 # http://localhost:3002
 
 ## 📱 Consumer App (ClaimLens Go)
 
+**Live:** [https://claimlens.netlify.app](https://claimlens.netlify.app)
+
 Mobile-first PWA (installable) for scanning food products.
 
 **Features:**
 - 4 input methods: URL, Screenshot, Barcode, Text
-- Trust score (0-110) with verdict (Allow/Caution/Avoid)
-- Allergen profile & alerts
-- Scan history (localStorage)
-- Safer swaps suggestions
+- Trust score (0-100) with verdict (Allow/Caution/Avoid)
+- Smart product name extraction from scanned text
+- Score breakdown with "Why this score?" explanations
+- Allergen profile & personalized alerts
+- Scan history with search/filter (localStorage)
+- Safer swaps suggestions with personalization
+- Shareable proof cards & results
+- Spectral scan animation during analysis
 - PWA with offline support (installable on mobile/desktop)
-- WCAG AA accessible
+- WCAG AA accessible with reduced motion support
 
 **Demo Examples to Scan:**
 ```
