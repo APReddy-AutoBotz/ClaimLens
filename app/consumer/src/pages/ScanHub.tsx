@@ -399,6 +399,7 @@ function ScanHub() {
             product_name: extractedProductName,
             claims: bannedClaims,
           },
+          breakdown: scoreResult.breakdown,
         };
       } else {
         // Call the consumer scan API with caching
@@ -443,8 +444,8 @@ function ScanHub() {
       // Brief verdict display
       await new Promise(resolve => setTimeout(resolve, 300));
 
-      // Calculate breakdown for the Why drawer
-      const breakdown = calculateTrustScore({
+      // Use breakdown from result if available (demo mode), otherwise calculate default
+      const breakdown = result.breakdown || calculateTrustScore({
         bannedClaimsCount: 0,
         hasRecall: false,
         userAllergensCount: 0,
