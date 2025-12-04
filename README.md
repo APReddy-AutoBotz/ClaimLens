@@ -4,12 +4,36 @@
 
 ## SKUs
 - **ClaimLens MenuShield** (B2B pre-publish gate for cloud kitchens/marketplaces)
-- **ClaimLens Go** (B2C consumer mobile app)
+- **ClaimLens Go** (B2C mobile-first PWA, installable)
 - **ClaimLens Packs** (Allergens, Banned Claims, Disclaimers, per locale)
 
 ---
 
-## 🚀 Quick Start (< 5 minutes)
+## ⚡ 3-Minute Demo Flow
+
+**For judges — follow this sequence:**
+
+| Step | Action | What to Notice |
+|------|--------|----------------|
+| 1 | Open Admin UI → http://localhost:3000 | Dashboard with compliance metrics, MCP health panel |
+| 2 | Click "Audit Trail" in sidebar | See audit entries with receipts (proof of each decision) |
+| 3 | Click any audit row → "View Receipts" | Drawer shows transform chain + evidence |
+| 4 | Check MCP Health panel (top-right) | Green = healthy, Yellow = degraded mode active |
+| 5 | Open Consumer App → http://localhost:3002 | Kiroween "Haunted Lens" theme, glassmorphism |
+| 6 | Paste this text and scan: | |
+| | `SuperDetox Miracle Weight Loss Tea` | |
+| | `Burns fat instantly! Clinically proven!` | |
+| 7 | See verdict: **AVOID** | Trust score, issues list, "Why" explanations |
+| 8 | Tap "Show Receipts" | Proof drawer with evidence for each flag |
+
+**Key differentiators to highlight:**
+- Every decision has receipts (audit trail)
+- MCP degraded mode keeps system running if services fail
+- No account required, privacy-first
+
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
 - Node.js 20 LTS
@@ -38,7 +62,7 @@ pnpm dev                 # http://localhost:3002
 | Service | Port | URL |
 |---------|------|-----|
 | Admin UI | 3000 | http://localhost:3000 |
-| Consumer App | 3002 | http://localhost:3002 |
+| Consumer PWA | 3002 | http://localhost:3002 |
 | API Server | 8080 | http://localhost:8080 |
 | MCP OCR | 7001 | - |
 | MCP Units | 7002 | - |
@@ -49,15 +73,15 @@ pnpm dev                 # http://localhost:3002
 
 ## 📱 Consumer App (ClaimLens Go)
 
-The B2C mobile-first PWA for scanning food products.
+Mobile-first PWA (installable) for scanning food products.
 
 **Features:**
 - 4 input methods: URL, Screenshot, Barcode, Text
 - Trust score (0-110) with verdict (Allow/Caution/Avoid)
 - Allergen profile & alerts
-- Scan history
+- Scan history (localStorage)
 - Safer swaps suggestions
-- PWA with offline support
+- PWA with offline support (installable on mobile/desktop)
 - WCAG AA accessible
 
 **Demo Examples to Scan:**
@@ -82,14 +106,56 @@ USDA Organic certified
 
 ## 🖥️ Admin UI (MenuShield)
 
-The B2B dashboard for compliance teams.
+B2B dashboard for compliance teams.
 
 **Features:**
 - Real-time compliance dashboard
 - Audit viewer with receipts
 - Rule packs editor
 - Action queue management
-- Policy change tracking
+- MCP health monitoring with degraded mode visibility
+
+---
+
+## 🔧 Troubleshooting
+
+### Port Already in Use
+
+If you see `EADDRINUSE` errors:
+
+```sh
+# Windows - find what's using a port
+netstat -ano | findstr :3000
+
+# Kill process by PID
+taskkill /PID <pid> /F
+
+# Or use different ports:
+# Admin: cd app/admin && PORT=3001 pnpm dev
+# Consumer: cd app/consumer && PORT=3003 pnpm dev
+```
+
+### Confirm Services Are Running
+
+```sh
+# Check API server
+curl http://localhost:8080/health
+
+# Check Admin UI
+curl http://localhost:3000
+
+# Check Consumer App
+curl http://localhost:3002
+```
+
+### Common Issues
+
+| Issue | Solution |
+|-------|----------|
+| `pnpm: command not found` | Run `npm i -g pnpm` |
+| MCP servers not starting | Ensure ports 7001-7004 are free |
+| Consumer app blank | Check browser console, ensure API is running |
+| Admin shows "No data" | Run `pnpm mcp:dev` first to start mock servers |
 
 ---
 
@@ -127,8 +193,8 @@ pnpm test:fixtures       # Scan fixtures
 The Consumer app features the "Haunted Lens" theme:
 - Spectral Teal (`#14B8A6`) - Primary actions
 - Ember Orange (`#F59E0B`) - Warnings
-- Glassmorphism effects
-- Spooky-but-classy microcopy
+- Glassmorphism effects with subtle grain
+- Spooky-but-classy microcopy ("Marked safe… for now.")
 
 ---
 
