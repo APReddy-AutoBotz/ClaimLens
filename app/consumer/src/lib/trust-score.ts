@@ -28,9 +28,10 @@ export interface TrustScoreResult {
 export function calculateTrustScore(input: TrustScoreInput): TrustScoreResult {
   const baseScore = 90;
   
-  const bannedClaimsDeduction = input.bannedClaimsCount * 30;
+  // Cap banned claims deduction at 50 points max (prevents instant zero)
+  const bannedClaimsDeduction = Math.min(input.bannedClaimsCount * 15, 50);
   const recallDeduction = input.hasRecall ? 25 : 0;
-  const allergenDeduction = input.userAllergensCount * 15;
+  const allergenDeduction = Math.min(input.userAllergensCount * 10, 30);
   
   let weaselWordDeduction = 0;
   if (input.weaselWordDensity > 0.20) {
